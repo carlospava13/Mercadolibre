@@ -6,13 +6,13 @@
 //
 
 import UIKit
+import SDWebImage
 
 final class ItemCell: BaseTableViewCell<ItemModel> {
     private lazy var itemImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleToFill
-        imageView.backgroundColor = .black
         return imageView
     }()
 
@@ -74,5 +74,6 @@ final class ItemCell: BaseTableViewCell<ItemModel> {
     override func set(data: ItemModel) {
         itemTitleLabel.text = data.title
         itemPriceTitleLabel.text = String(data.price)
+        itemImageView.sd_setImage(with: URL(string: data.thumbnail), completed: nil)
     }
 }

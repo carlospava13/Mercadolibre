@@ -17,11 +17,13 @@ public struct APIItemModel: Codable {
     public var price: Int
     public var availableQuantity: Int
     public var permalink: String
+    public var thumbnail: String
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case title = "title"
         case price = "price"
         case availableQuantity = "available_quantity"
         case permalink = "permalink"
+        case thumbnail = "thumbnail"
     }
 }
