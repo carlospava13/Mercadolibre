@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		250FF246CFB6D4DA5B5A5566 /* Pods_MercadoLibre_MercadoLibreUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3D9FD130753E92B3A6CA36D /* Pods_MercadoLibre_MercadoLibreUITests.framework */; };
+		30488DF4D3202C25EDD3636B /* Pods_MercadoLibre.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E056520E486355A5722A3C92 /* Pods_MercadoLibre.framework */; };
+		3523B7D8C09BA61863E8C488 /* Pods_MercadoLibreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A241ED28A275E7CD9A234D5E /* Pods_MercadoLibreTests.framework */; };
 		8497105526593E1E00026225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8497105426593E1E00026225 /* AppDelegate.swift */; };
 		8497105726593E1E00026225 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8497105626593E1E00026225 /* SceneDelegate.swift */; };
 		8497105926593E1E00026225 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8497105826593E1E00026225 /* HomeViewController.swift */; };
@@ -43,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F2881E3EF7948271775A99C /* Pods-MercadoLibre-MercadoLibreUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MercadoLibre-MercadoLibreUITests.debug.xcconfig"; path = "Target Support Files/Pods-MercadoLibre-MercadoLibreUITests/Pods-MercadoLibre-MercadoLibreUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		76AD217FC5F096ED01AC0355 /* Pods-MercadoLibre.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MercadoLibre.debug.xcconfig"; path = "Target Support Files/Pods-MercadoLibre/Pods-MercadoLibre.debug.xcconfig"; sourceTree = "<group>"; };
 		8497105126593E1E00026225 /* MercadoLibre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MercadoLibre.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8497105426593E1E00026225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8497105626593E1E00026225 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +70,13 @@
 		849710CD2659500F00026225 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		849710D2265950BD00026225 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		849710D82659511E00026225 /* TextML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextML.swift; sourceTree = "<group>"; };
+		A2290C66B4EFE1B3AE55360A /* Pods-MercadoLibreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MercadoLibreTests.release.xcconfig"; path = "Target Support Files/Pods-MercadoLibreTests/Pods-MercadoLibreTests.release.xcconfig"; sourceTree = "<group>"; };
+		A241ED28A275E7CD9A234D5E /* Pods_MercadoLibreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MercadoLibreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3D9FD130753E92B3A6CA36D /* Pods_MercadoLibre_MercadoLibreUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MercadoLibre_MercadoLibreUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6D2F483C14031D7A394BD7F /* Pods-MercadoLibreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MercadoLibreTests.debug.xcconfig"; path = "Target Support Files/Pods-MercadoLibreTests/Pods-MercadoLibreTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B87744CDD426CC6CC367FA74 /* Pods-MercadoLibre.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MercadoLibre.release.xcconfig"; path = "Target Support Files/Pods-MercadoLibre/Pods-MercadoLibre.release.xcconfig"; sourceTree = "<group>"; };
+		E056520E486355A5722A3C92 /* Pods_MercadoLibre.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MercadoLibre.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECF5F974D266D5A561BC8E51 /* Pods-MercadoLibre-MercadoLibreUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MercadoLibre-MercadoLibreUITests.release.xcconfig"; path = "Target Support Files/Pods-MercadoLibre-MercadoLibreUITests/Pods-MercadoLibre-MercadoLibreUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30488DF4D3202C25EDD3636B /* Pods_MercadoLibre.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3523B7D8C09BA61863E8C488 /* Pods_MercadoLibreTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,12 +100,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				250FF246CFB6D4DA5B5A5566 /* Pods_MercadoLibre_MercadoLibreUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17DBCCC1ACBFE624AB5EE9C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E056520E486355A5722A3C92 /* Pods_MercadoLibre.framework */,
+				A3D9FD130753E92B3A6CA36D /* Pods_MercadoLibre_MercadoLibreUITests.framework */,
+				A241ED28A275E7CD9A234D5E /* Pods_MercadoLibreTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2040E7F36B20C9C4785A6417 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				76AD217FC5F096ED01AC0355 /* Pods-MercadoLibre.debug.xcconfig */,
+				B87744CDD426CC6CC367FA74 /* Pods-MercadoLibre.release.xcconfig */,
+				2F2881E3EF7948271775A99C /* Pods-MercadoLibre-MercadoLibreUITests.debug.xcconfig */,
+				ECF5F974D266D5A561BC8E51 /* Pods-MercadoLibre-MercadoLibreUITests.release.xcconfig */,
+				A6D2F483C14031D7A394BD7F /* Pods-MercadoLibreTests.debug.xcconfig */,
+				A2290C66B4EFE1B3AE55360A /* Pods-MercadoLibreTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8497104826593E1E00026225 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +138,8 @@
 				8497106A26593E1F00026225 /* MercadoLibreTests */,
 				8497107526593E1F00026225 /* MercadoLibreUITests */,
 				8497105226593E1E00026225 /* Products */,
+				2040E7F36B20C9C4785A6417 /* Pods */,
+				17DBCCC1ACBFE624AB5EE9C9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -199,6 +240,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8497107B26593E1F00026225 /* Build configuration list for PBXNativeTarget "MercadoLibre" */;
 			buildPhases = (
+				6AC8AEAF1350AA7EB85042A6 /* [CP] Check Pods Manifest.lock */,
 				8497104D26593E1E00026225 /* Sources */,
 				8497104E26593E1E00026225 /* Frameworks */,
 				8497104F26593E1E00026225 /* Resources */,
@@ -216,6 +258,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8497107E26593E1F00026225 /* Build configuration list for PBXNativeTarget "MercadoLibreTests" */;
 			buildPhases = (
+				CB75102881FAD5F9B99012BF /* [CP] Check Pods Manifest.lock */,
 				8497106326593E1F00026225 /* Sources */,
 				8497106426593E1F00026225 /* Frameworks */,
 				8497106526593E1F00026225 /* Resources */,
@@ -234,6 +277,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8497108126593E1F00026225 /* Build configuration list for PBXNativeTarget "MercadoLibreUITests" */;
 			buildPhases = (
+				B6BF34F3C5E7685AA601F18A /* [CP] Check Pods Manifest.lock */,
 				8497106E26593E1F00026225 /* Sources */,
 				8497106F26593E1F00026225 /* Frameworks */,
 				8497107026593E1F00026225 /* Resources */,
@@ -316,6 +360,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6AC8AEAF1350AA7EB85042A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MercadoLibre-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6BF34F3C5E7685AA601F18A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MercadoLibre-MercadoLibreUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB75102881FAD5F9B99012BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MercadoLibreTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8497104D26593E1E00026225 /* Sources */ = {
@@ -505,6 +618,7 @@
 		};
 		8497107C26593E1F00026225 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76AD217FC5F096ED01AC0355 /* Pods-MercadoLibre.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -523,6 +637,7 @@
 		};
 		8497107D26593E1F00026225 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B87744CDD426CC6CC367FA74 /* Pods-MercadoLibre.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -541,6 +656,7 @@
 		};
 		8497107F26593E1F00026225 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6D2F483C14031D7A394BD7F /* Pods-MercadoLibreTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -562,6 +678,7 @@
 		};
 		8497108026593E1F00026225 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2290C66B4EFE1B3AE55360A /* Pods-MercadoLibreTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -583,6 +700,7 @@
 		};
 		8497108226593E1F00026225 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F2881E3EF7948271775A99C /* Pods-MercadoLibre-MercadoLibreUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -602,6 +720,7 @@
 		};
 		8497108326593E1F00026225 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECF5F974D266D5A561BC8E51 /* Pods-MercadoLibre-MercadoLibreUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
