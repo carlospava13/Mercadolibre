@@ -9,6 +9,7 @@ import Foundation
 import Combine
 
 public final class APIClient: APIClienting {
+    public init() {}
     public func execute<T>(_ endPoint: EndPointBuilderAble) -> AnyPublisher<T, Error> where T : Decodable, T : Encodable {
         
         guard let url = URL(string:endPoint.stringURL) else {

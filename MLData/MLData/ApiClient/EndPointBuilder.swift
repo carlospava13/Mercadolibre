@@ -11,19 +11,30 @@ public protocol EndPointBuilderAble {
     var stringURL: String { get set }
 }
 
-public final class EndPointBuilder: EndPointBuilderAble {
-    public var stringURL = String()
+public final class EndPointBuilder {
+    public var urlEndPoint: EndPointBuilderAble
 
-    init() {
-        stringURL = EndPoint.baseUrl
+    public init(urlEndPoint: EndPointBuilderAble = EndPoint()) {
+        self.urlEndPoint = urlEndPoint
+        self.urlEndPoint.stringURL.append(EndPointValue.baseUrl)
     }
 
-    public func add(_ point: EndPoint.Points) -> Self {
-        stringURL.append(point.rawValue)
+    public func add(_ point: EndPointValue.Points) -> Self {
+        urlEndPoint.stringURL.append(point.rawValue)
+        return self
+    }
+    
+    public func add(_ value: String) -> Self {
+        urlEndPoint.stringURL.append(value)
         return self
     }
 
-    public func build() -> Self {
-        return self
+    public func build() -> EndPointBuilderAble {
+        return urlEndPoint
     }
+}
+
+public class EndPoint: EndPointBuilderAble {
+    public var stringURL: String = ""
+    public init() {}
 }

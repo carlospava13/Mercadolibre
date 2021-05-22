@@ -11,8 +11,9 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNeedsStatusBarAppearanceUpdate()
         navigationController?.navigationBar.backgroundColor = .yellowML
-        view.backgroundColor = .yellowML
+        view.backgroundColor = .white
+        view.addGradientView(color: .yellowML)
     }
-    
 }

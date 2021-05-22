@@ -18,6 +18,7 @@ public struct APIItemModel: Codable {
     public var availableQuantity: Int
     public var permalink: String
     public var thumbnail: String
+    public var condition: String
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case title = "title"
@@ -25,5 +26,6 @@ public struct APIItemModel: Codable {
         case availableQuantity = "available_quantity"
         case permalink = "permalink"
         case thumbnail = "thumbnail"
+        case condition = "condition"
     }
 }

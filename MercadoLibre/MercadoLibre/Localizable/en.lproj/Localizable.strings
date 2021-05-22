@@ -7,3 +7,8 @@
 */
 //MARK: Search bar
 "searchBar.placeholder" = "Buscar productos, marcas y mas";
+
+//MARK: Categories
+
+"homeView.categoryTitle" = "Categorias";
+"homeView.itemTitle" = "Productos";

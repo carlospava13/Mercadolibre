@@ -7,7 +7,9 @@
 
 import UIKit
 
-class BaseTableViewDataSource<Data: CellObjectView, CELL: BaseTableViewCell<Data>>: NSObject, UITableViewDataSource {
+class BaseTableViewDataSource<Data: CellObjectView, CELL: BaseTableViewCell<Data>>: NSObject,
+                                                                                    UITableViewDataSource,
+                                                                                    UITableViewDelegate{
     private var data: [Data] = []
     private var cellIdentifier: String
     init(cellIdentifier: CELL.Type) {
@@ -28,6 +30,10 @@ class BaseTableViewDataSource<Data: CellObjectView, CELL: BaseTableViewCell<Data
         }
         cell.set(data: data[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //This metod left it empty here.
     }
 }
 

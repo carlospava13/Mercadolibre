@@ -12,68 +12,72 @@ final class ItemCell: BaseTableViewCell<ItemModel> {
     private lazy var itemImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
 
-    private lazy var itemTitleLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 0
-        return label
-    }()
+    private lazy var itemTitleLabel = ItemTitleLabel()
 
-    private lazy var itemPriceTitleLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+    private lazy var itemPriceLabel =  ItemDescriptionLabel()
+    
+    private lazy var itemConditionLabel =  ItemAdviceLabel()
+    
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setItemImageViewConstraints()
         setItemTitleConstraints()
         setItemPriceTitleConstraints()
+        setItemConditionLabelConstraints()
+        setItemImageViewConstraints()
     }
 
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    private func setItemImageViewConstraints() {
-        contentView.addSubview(itemImageView)
-        NSLayoutConstraint.activate([
-            itemImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            itemImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
-            itemImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
-            itemImageView.widthAnchor.constraint(equalToConstant: 100),
-            itemImageView.heightAnchor.constraint(equalToConstant: 100)
-        ])
-    }
-
+    
     private func setItemTitleConstraints() {
-        contentView.addSubview(itemTitleLabel)
+        addSubview(itemTitleLabel)
         NSLayoutConstraint.activate([
-            itemTitleLabel.topAnchor.constraint(equalTo: itemImageView.topAnchor),
-            itemTitleLabel.leadingAnchor.constraint(equalTo: itemImageView.trailingAnchor, constant: 8),
-            itemTitleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
+            itemTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8),
+            itemTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
         ])
     }
     
     private func setItemPriceTitleConstraints() {
-        contentView.addSubview(itemPriceTitleLabel)
+        addSubview(itemPriceLabel)
         NSLayoutConstraint.activate([
-            itemPriceTitleLabel.topAnchor.constraint(equalTo: itemTitleLabel.bottomAnchor),
-            itemPriceTitleLabel.leadingAnchor.constraint(equalTo: itemImageView.trailingAnchor, constant: 8),
-            itemPriceTitleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            itemPriceTitleLabel.heightAnchor.constraint(equalToConstant: 25)
+            itemPriceLabel.topAnchor.constraint(equalTo: itemTitleLabel.bottomAnchor, constant: 8),
+            itemPriceLabel.leadingAnchor.constraint(equalTo: itemTitleLabel.leadingAnchor),
+            itemPriceLabel.trailingAnchor.constraint(equalTo: itemTitleLabel.trailingAnchor)
         ])
     }
     
+    private func setItemConditionLabelConstraints() {
+        addSubview(itemConditionLabel)
+        NSLayoutConstraint.activate([
+            itemConditionLabel.topAnchor.constraint(equalTo: itemPriceLabel.bottomAnchor, constant: 8),
+            itemConditionLabel.leadingAnchor.constraint(equalTo: itemTitleLabel.leadingAnchor),
+            itemConditionLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16)
+        ])
+    }
+    
+    private func setItemImageViewConstraints() {
+        addSubview(itemImageView)
+        NSLayoutConstraint.activate([
+            itemImageView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
+            itemImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            itemImageView.trailingAnchor.constraint(equalTo: itemTitleLabel.leadingAnchor, constant: -16),
+            itemImageView.widthAnchor.constraint(equalToConstant: 70),
+            itemImageView.heightAnchor.constraint(equalToConstant: 70),
+        ])
+    }
+    
+
     override func set(data: ItemModel) {
         itemTitleLabel.text = data.title
-        itemPriceTitleLabel.text = String(data.price)
+        itemPriceLabel.text = data.price.setCurrentMoneyFormatter()
+        itemConditionLabel.text = data.condition
         itemImageView.sd_setImage(with: URL(string: data.thumbnail), completed: nil)
     }
 }

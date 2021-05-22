@@ -7,12 +7,13 @@
 
 import Foundation
 
-public enum EndPoint {
+public enum EndPointValue {
     static let baseUrl = "https://api.mercadolibre.com/"
     public enum Points: String {
         case sites = "sites/"
         case siteID = "MCO/"
         case search = "search?q="
         case all = "all"
+        case categories = "categories"
     }
 }
