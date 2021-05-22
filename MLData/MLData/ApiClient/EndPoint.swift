@@ -11,7 +11,8 @@ public enum EndPoint {
     static let baseUrl = "https://api.mercadolibre.com/"
     public enum Points: String {
         case sites = "sites/"
-        case siteID = "MCO"
+        case siteID = "MCO/"
         case search = "search?q="
+        case all = "all"
     }
 }
