@@ -11,4 +11,12 @@ enum TextML {
     enum Search {
         static let placeholder = "searchBar.placeholder".localized
     }
+
+    enum Category {
+        static let title = "homeView.categoryTitle".localized
+    }
+
+    enum Product {
+        static let title = "homeView.itemTitle".localized
+    }
 }

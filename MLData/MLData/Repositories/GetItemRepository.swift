@@ -7,17 +7,13 @@
 
 import Combine
 
-public final class GetItemRepository: GetItemsRepositoring {
-
-    public init() {}
-    let apiClient = APIClient()
-    let endpointBuilder = EndPointBuilder()
-    
+public final class GetItemRepository: BaseRepository, GetItemsRepositoring {
     public func getItems(item: String) -> AnyPublisher<APIItemResultModel, Error> {
-        apiClient.execute(endpointBuilder
-                            .add(.sites)
-                            .add(.siteID)
-                            .add(.search)
-                            .add(item))
+        apiClient.execute(endPointBuilder
+            .add(.sites)
+            .add(.siteID)
+            .add(.search)
+            .add(item)
+            .build())
     }
 }

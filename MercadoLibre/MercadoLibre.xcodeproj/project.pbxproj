@@ -31,7 +31,6 @@
 		8497106126593E1F00026225 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8497105F26593E1F00026225 /* LaunchScreen.storyboard */; };
 		8497106C26593E1F00026225 /* MercadoLibreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8497106B26593E1F00026225 /* MercadoLibreTests.swift */; };
 		8497107726593E1F00026225 /* MercadoLibreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8497107626593E1F00026225 /* MercadoLibreUITests.swift */; };
-		8497109826593FD800026225 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8497109726593FD800026225 /* HomeView.swift */; };
 		849710A42659458A00026225 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849710A32659458A00026225 /* BaseViewController.swift */; };
 		849710AD265947B700026225 /* UIColor+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849710AC265947B700026225 /* UIColor+Color.swift */; };
 		849710B6265949CE00026225 /* SearchBarML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849710B5265949CE00026225 /* SearchBarML.swift */; };
@@ -102,7 +101,6 @@
 		8497107226593E1F00026225 /* MercadoLibreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MercadoLibreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8497107626593E1F00026225 /* MercadoLibreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercadoLibreUITests.swift; sourceTree = "<group>"; };
 		8497107826593E1F00026225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8497109726593FD800026225 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		849710A32659458A00026225 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		849710AC265947B700026225 /* UIColor+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Color.swift"; sourceTree = "<group>"; };
 		849710B5265949CE00026225 /* SearchBarML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarML.swift; sourceTree = "<group>"; };
@@ -253,7 +251,6 @@
 			children = (
 				8454731F265975F8003DDF17 /* Model */,
 				8497105826593E1E00026225 /* HomeViewController.swift */,
-				8497109726593FD800026225 /* HomeView.swift */,
 				84547317265975A9003DDF17 /* ItemDataSource.swift */,
 				848FDECD2659AA9200FBA11B /* CategoryDataSource.swift */,
 				8454731B265975BD003DDF17 /* ItemCell.swift */,
@@ -549,7 +546,6 @@
 				849710D92659511E00026225 /* TextML.swift in Sources */,
 				849710BE26594AB200026225 /* UIView+Gradient.swift in Sources */,
 				848FDECE2659AA9200FBA11B /* CategoryDataSource.swift in Sources */,
-				8497109826593FD800026225 /* HomeView.swift in Sources */,
 				848FDEBC2659A83D00FBA11B /* CategoryModel.swift in Sources */,
 				849710AD265947B700026225 /* UIColor+Color.swift in Sources */,
 				8497105526593E1E00026225 /* AppDelegate.swift in Sources */,

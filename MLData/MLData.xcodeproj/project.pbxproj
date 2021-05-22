@@ -14,6 +14,7 @@
 		848FDEC02659A8A400FBA11B /* GetCategoriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FDEBF2659A8A400FBA11B /* GetCategoriesRepository.swift */; };
 		848FDEC42659A8D600FBA11B /* GetCategoryRepositoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FDEC32659A8D600FBA11B /* GetCategoryRepositoring.swift */; };
 		848FDEC82659A8F900FBA11B /* CategoryDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FDEC72659A8F900FBA11B /* CategoryDto.swift */; };
+		848FDED62659C0E800FBA11B /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FDED52659C0E800FBA11B /* BaseRepository.swift */; };
 		84B2250F2659575300A5A1C8 /* MLData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B225052659575200A5A1C8 /* MLData.framework */; };
 		84B225142659575300A5A1C8 /* MLDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B225132659575300A5A1C8 /* MLDataTests.swift */; };
 		84B225162659575300A5A1C8 /* MLData.h in Headers */ = {isa = PBXBuildFile; fileRef = 84B225082659575200A5A1C8 /* MLData.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -41,6 +42,7 @@
 		848FDEBF2659A8A400FBA11B /* GetCategoriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategoriesRepository.swift; sourceTree = "<group>"; };
 		848FDEC32659A8D600FBA11B /* GetCategoryRepositoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategoryRepositoring.swift; sourceTree = "<group>"; };
 		848FDEC72659A8F900FBA11B /* CategoryDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDto.swift; sourceTree = "<group>"; };
+		848FDED52659C0E800FBA11B /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
 		84B225052659575200A5A1C8 /* MLData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MLData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B225082659575200A5A1C8 /* MLData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLData.h; sourceTree = "<group>"; };
 		84B225092659575200A5A1C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			children = (
 				845472FB26596D11003DDF17 /* GetItemRepository.swift */,
 				848FDEBF2659A8A400FBA11B /* GetCategoriesRepository.swift */,
+				848FDED52659C0E800FBA11B /* BaseRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				84B2253126595AA200A5A1C8 /* EndPoint.swift in Sources */,
 				845472DF26596516003DDF17 /* HTTPStatusCode.swift in Sources */,
 				848FDEC42659A8D600FBA11B /* GetCategoryRepositoring.swift in Sources */,
+				848FDED62659C0E800FBA11B /* BaseRepository.swift in Sources */,
 				845472F426596B56003DDF17 /* Item.swift in Sources */,
 				848FDEC02659A8A400FBA11B /* GetCategoriesRepository.swift in Sources */,
 				848FDEC82659A8F900FBA11B /* CategoryDto.swift in Sources */,
