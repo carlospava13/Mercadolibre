@@ -22,6 +22,11 @@ public final class EndPointBuilder: EndPointBuilderAble {
         stringURL.append(point.rawValue)
         return self
     }
+    
+    public func add(_ value: String) -> Self {
+        stringURL.append(value)
+        return self
+    }
 
     public func build() -> Self {
         return self

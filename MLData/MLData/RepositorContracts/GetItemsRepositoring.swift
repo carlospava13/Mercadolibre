@@ -8,5 +8,5 @@
 import Combine
 
 public protocol GetItemsRepositoring {
-    func getItems() -> AnyPublisher<APIItemResultModel, Error>
+    func getItems(item: String) -> AnyPublisher<APIItemResultModel, Error>
 }

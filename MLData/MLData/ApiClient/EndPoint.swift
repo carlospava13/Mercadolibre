@@ -14,5 +14,6 @@ public enum EndPoint {
         case siteID = "MCO/"
         case search = "search?q="
         case all = "all"
+        case categories = "categories"
     }
 }

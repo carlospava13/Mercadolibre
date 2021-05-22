@@ -13,18 +13,22 @@ final class HomeView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(cell: ItemCell.self)
+        tableView.register(cell: CategotyCell.self)
         return tableView
     }()
 
-    private lazy var dataSource: HomeDataSource = {
-        HomeDataSource(cellIdentifier: ItemCell.self)
+    private lazy var itemDataSource: ItemDataSource = {
+        ItemDataSource(cellIdentifier: ItemCell.self)
+    }()
+    
+    private lazy var categoryDataSource: CategoryDataSource = {
+        CategoryDataSource(cellIdentifier: CategotyCell.self)
     }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
         setupViews()
-        setupTableView()
     }
 
     @available(*, unavailable)
@@ -42,13 +46,21 @@ final class HomeView: UIView {
         ])
         addGradientView(color: .yellowML)
     }
-
-    private func setupTableView() {
+    
+    private func setDataSource(_ dataSource: UITableViewDataSource & UITableViewDelegate) {
         tableView.dataSource = dataSource
+        tableView.delegate = dataSource
     }
 
-    func set(data: [ItemModel]) {
-        dataSource.set(data: data)
+    func setItem(data: [ItemModel]) {
+        setDataSource(itemDataSource)
+        itemDataSource.set(data: data)
+        tableView.reloadData()
+    }
+    
+    func setCategory(data: [CategoryModel]) {
+        setDataSource(categoryDataSource)
+        categoryDataSource.set(data: data)
         tableView.reloadData()
     }
 }
