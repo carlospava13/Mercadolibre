@@ -9,11 +9,17 @@
 /* Begin PBXBuildFile section */
 		8497105526593E1E00026225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8497105426593E1E00026225 /* AppDelegate.swift */; };
 		8497105726593E1E00026225 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8497105626593E1E00026225 /* SceneDelegate.swift */; };
-		8497105926593E1E00026225 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8497105826593E1E00026225 /* ViewController.swift */; };
+		8497105926593E1E00026225 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8497105826593E1E00026225 /* HomeViewController.swift */; };
 		8497105E26593E1F00026225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8497105D26593E1F00026225 /* Assets.xcassets */; };
 		8497106126593E1F00026225 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8497105F26593E1F00026225 /* LaunchScreen.storyboard */; };
 		8497106C26593E1F00026225 /* MercadoLibreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8497106B26593E1F00026225 /* MercadoLibreTests.swift */; };
 		8497107726593E1F00026225 /* MercadoLibreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8497107626593E1F00026225 /* MercadoLibreUITests.swift */; };
+		8497109826593FD800026225 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8497109726593FD800026225 /* HomeView.swift */; };
+		849710A42659458A00026225 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849710A32659458A00026225 /* BaseViewController.swift */; };
+		849710AD265947B700026225 /* UIColor+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849710AC265947B700026225 /* UIColor+Color.swift */; };
+		849710B6265949CE00026225 /* SearchBarML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849710B5265949CE00026225 /* SearchBarML.swift */; };
+		849710BE26594AB200026225 /* UIView+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849710BD26594AB200026225 /* UIView+Gradient.swift */; };
+		849710C326594D4F00026225 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849710C226594D4F00026225 /* UINavigationController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +43,7 @@
 		8497105126593E1E00026225 /* MercadoLibre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MercadoLibre.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8497105426593E1E00026225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8497105626593E1E00026225 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8497105826593E1E00026225 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8497105826593E1E00026225 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8497105D26593E1F00026225 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8497106026593E1F00026225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8497106226593E1F00026225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +53,12 @@
 		8497107226593E1F00026225 /* MercadoLibreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MercadoLibreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8497107626593E1F00026225 /* MercadoLibreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercadoLibreUITests.swift; sourceTree = "<group>"; };
 		8497107826593E1F00026225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8497109726593FD800026225 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		849710A32659458A00026225 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		849710AC265947B700026225 /* UIColor+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Color.swift"; sourceTree = "<group>"; };
+		849710B5265949CE00026225 /* SearchBarML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarML.swift; sourceTree = "<group>"; };
+		849710BD26594AB200026225 /* UIView+Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Gradient.swift"; sourceTree = "<group>"; };
+		849710C226594D4F00026225 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +109,12 @@
 		8497105326593E1E00026225 /* MercadoLibre */ = {
 			isa = PBXGroup;
 			children = (
+				849710B4265949BA00026225 /* ComponentViews */,
+				849710AB2659479F00026225 /* Helpers */,
+				849710A22659457D00026225 /* Base */,
+				8497109626593FC400026225 /* Home */,
 				8497105426593E1E00026225 /* AppDelegate.swift */,
 				8497105626593E1E00026225 /* SceneDelegate.swift */,
-				8497105826593E1E00026225 /* ViewController.swift */,
 				8497105D26593E1F00026225 /* Assets.xcassets */,
 				8497105F26593E1F00026225 /* LaunchScreen.storyboard */,
 				8497106226593E1F00026225 /* Info.plist */,
@@ -123,6 +138,41 @@
 				8497107826593E1F00026225 /* Info.plist */,
 			);
 			path = MercadoLibreUITests;
+			sourceTree = "<group>";
+		};
+		8497109626593FC400026225 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8497105826593E1E00026225 /* HomeViewController.swift */,
+				8497109726593FD800026225 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		849710A22659457D00026225 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				849710A32659458A00026225 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		849710AB2659479F00026225 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				849710AC265947B700026225 /* UIColor+Color.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		849710B4265949BA00026225 /* ComponentViews */ = {
+			isa = PBXGroup;
+			children = (
+				849710B5265949CE00026225 /* SearchBarML.swift */,
+				849710BD26594AB200026225 /* UIView+Gradient.swift */,
+				849710C226594D4F00026225 /* UINavigationController+Extensions.swift */,
+			);
+			path = ComponentViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,9 +304,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8497105926593E1E00026225 /* ViewController.swift in Sources */,
+				849710A42659458A00026225 /* BaseViewController.swift in Sources */,
+				8497105926593E1E00026225 /* HomeViewController.swift in Sources */,
+				849710BE26594AB200026225 /* UIView+Gradient.swift in Sources */,
+				8497109826593FD800026225 /* HomeView.swift in Sources */,
+				849710AD265947B700026225 /* UIColor+Color.swift in Sources */,
 				8497105526593E1E00026225 /* AppDelegate.swift in Sources */,
 				8497105726593E1E00026225 /* SceneDelegate.swift in Sources */,
+				849710C326594D4F00026225 /* UINavigationController+Extensions.swift in Sources */,
+				849710B6265949CE00026225 /* SearchBarML.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
