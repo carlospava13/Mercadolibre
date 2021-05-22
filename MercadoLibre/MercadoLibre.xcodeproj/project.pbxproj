@@ -20,6 +20,9 @@
 		849710B6265949CE00026225 /* SearchBarML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849710B5265949CE00026225 /* SearchBarML.swift */; };
 		849710BE26594AB200026225 /* UIView+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849710BD26594AB200026225 /* UIView+Gradient.swift */; };
 		849710C326594D4F00026225 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849710C226594D4F00026225 /* UINavigationController+Extensions.swift */; };
+		849710CC2659500F00026225 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 849710CE2659500F00026225 /* Localizable.strings */; };
+		849710D3265950BD00026225 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849710D2265950BD00026225 /* String+Extensions.swift */; };
+		849710D92659511E00026225 /* TextML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849710D82659511E00026225 /* TextML.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		849710B5265949CE00026225 /* SearchBarML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarML.swift; sourceTree = "<group>"; };
 		849710BD26594AB200026225 /* UIView+Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Gradient.swift"; sourceTree = "<group>"; };
 		849710C226594D4F00026225 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
+		849710CD2659500F00026225 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		849710D2265950BD00026225 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		849710D82659511E00026225 /* TextML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextML.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,7 @@
 		8497105326593E1E00026225 /* MercadoLibre */ = {
 			isa = PBXGroup;
 			children = (
+				849710D72659510900026225 /* Localizable */,
 				849710B4265949BA00026225 /* ComponentViews */,
 				849710AB2659479F00026225 /* Helpers */,
 				849710A22659457D00026225 /* Base */,
@@ -160,7 +167,9 @@
 		849710AB2659479F00026225 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				849710C226594D4F00026225 /* UINavigationController+Extensions.swift */,
 				849710AC265947B700026225 /* UIColor+Color.swift */,
+				849710D2265950BD00026225 /* String+Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -170,9 +179,17 @@
 			children = (
 				849710B5265949CE00026225 /* SearchBarML.swift */,
 				849710BD26594AB200026225 /* UIView+Gradient.swift */,
-				849710C226594D4F00026225 /* UINavigationController+Extensions.swift */,
 			);
 			path = ComponentViews;
+			sourceTree = "<group>";
+		};
+		849710D72659510900026225 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				849710CE2659500F00026225 /* Localizable.strings */,
+				849710D82659511E00026225 /* TextML.swift */,
+			);
+			path = Localizable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8497106126593E1F00026225 /* LaunchScreen.storyboard in Resources */,
+				849710CC2659500F00026225 /* Localizable.strings in Resources */,
 				8497105E26593E1F00026225 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,8 +322,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				849710D3265950BD00026225 /* String+Extensions.swift in Sources */,
 				849710A42659458A00026225 /* BaseViewController.swift in Sources */,
 				8497105926593E1E00026225 /* HomeViewController.swift in Sources */,
+				849710D92659511E00026225 /* TextML.swift in Sources */,
 				849710BE26594AB200026225 /* UIView+Gradient.swift in Sources */,
 				8497109826593FD800026225 /* HomeView.swift in Sources */,
 				849710AD265947B700026225 /* UIColor+Color.swift in Sources */,
@@ -354,6 +374,14 @@
 				8497106026593E1F00026225 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		849710CE2659500F00026225 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				849710CD2659500F00026225 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

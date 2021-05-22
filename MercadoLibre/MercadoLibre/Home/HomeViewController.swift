@@ -11,7 +11,7 @@ final class HomeViewController: BaseViewController {
     private lazy var searchBar: SearchBarML = {
         let searchBar = SearchBarML()
         searchBar.delegate = self
-        searchBar.placeholder = "Buscar productos, marcas y mas"
+        searchBar.placeholder = TextML.Search.placeholder
         return searchBar
     }()
 
