@@ -10,5 +10,6 @@ import Foundation
 struct ItemModel: CellObjectView {
     var title: String
     var price: Int
+    var condition: String
     var thumbnail: String
 }

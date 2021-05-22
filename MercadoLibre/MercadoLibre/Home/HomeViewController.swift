@@ -46,6 +46,7 @@ final class HomeViewController: BaseViewController {
             data.append(ItemModel(
                 title: apiModel.title,
                 price: apiModel.price,
+                condition: "Nuevo",
                 thumbnail: apiModel.thumbnail))
         }
         homeView.set(data: data)
