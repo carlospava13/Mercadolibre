@@ -9,13 +9,14 @@ import MLData
 
 final class CategoryPresenter: BasePresenter {
     struct InputDependencies {
-        var coordinator: CategoryCoordinatorDelegate?
+        let coordinator: CategoryCoordinatorDelegate?
         let category: CategoryModel
+        let repository: GetProductByCategoryRepositoring
     }
 
     private var dependencies: InputDependencies
-    private var ownerView: CategoryView {
-        view as! CategoryView
+    private var ownerView: CategoryView! {
+        view as? CategoryView
     }
 
     init(dependencies: InputDependencies) {
@@ -28,8 +29,7 @@ final class CategoryPresenter: BasePresenter {
     }
 
     private func getProducts() {
-        let repository = GetProductByCategoryRepository()
-        repository.getProducts(categoryId: dependencies.category.id).sink { _ in
+        dependencies.repository.getProducts(categoryId: dependencies.category.id).sink { _ in
 
         } receiveValue: { [weak self] apiProducts in
             self?.parse(items: apiProducts.results)
@@ -40,6 +40,7 @@ final class CategoryPresenter: BasePresenter {
         var data: [ProductModel] = []
         items.forEach { apiModel in
             data.append(ProductModel(
+                id: apiModel.id,
                 title: apiModel.title,
                 price: apiModel.price,
                 condition: apiModel.condition,

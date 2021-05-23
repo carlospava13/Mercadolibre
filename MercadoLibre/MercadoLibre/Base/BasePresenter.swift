@@ -8,7 +8,7 @@
 import Combine
 
 class BasePresenter: BasePresentering {
-    var view: BaseView!
+    weak var view: BaseView?
     var subscriptions = Set<AnyCancellable>()
 
     func bind(view: BaseView) {

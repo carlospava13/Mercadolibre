@@ -13,14 +13,13 @@ final class SearchViewController: BaseViewController {
         searchBar.placeholder = TextML.Search.placeholder
         return searchBar
     }()
-    
+
     private lazy var contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
-    
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -32,11 +31,9 @@ final class SearchViewController: BaseViewController {
         tableView.alpha = 0
         return tableView
     }()
-    
-    private lazy var productDataSource: ProductDataSource = {
-        ProductDataSource(cellIdentifier: ProductCell.self)
-    }()
 
+    private var dataSource: ProductDataSource!
+    
     private var ownerPresenter: SearchPresentering {
         presenter as! SearchPresentering
     }
@@ -52,16 +49,17 @@ final class SearchViewController: BaseViewController {
     }
 
     private func setLeftBarButtonItem() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close,
-                                                           target: self,
-                                                           action: #selector(close))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .close,
+            target: self,
+            action: #selector(close))
     }
 
     private func setupSearchBar() {
         navigationController?.navigationBar.topItem?.titleView = searchBar
         navigationController?.removeLines()
     }
-    
+
     private func setContentViewConstraints() {
         view.addSubview(contentView)
         let guide = view.safeAreaLayoutGuide
@@ -82,10 +80,12 @@ final class SearchViewController: BaseViewController {
             tableView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
         ])
     }
-    
+
     private func setupTableView() {
-        tableView.dataSource = productDataSource
-        tableView.delegate = productDataSource
+        dataSource = ProductDataSource(cellIdentifier: ProductCell.self)
+        dataSource.delegate = ownerPresenter
+        tableView.dataSource = dataSource
+        tableView.delegate = dataSource
         tableView.layer.cornerRadius = 10
     }
 
@@ -98,15 +98,15 @@ extension SearchViewController: SearchView {
     func setTitle(_ text: String) {
         title = text
     }
-    
+
     func showTableViewWithAnimation() {
-        UIView.animate(withDuration: 0.5) {
-            self.tableView.alpha = 1
+        UIView.animate(withDuration: 0.5) { [weak self] in
+            self?.tableView.alpha = 1
         }
     }
-    
+
     func setupProduct(data: [ProductModel]) {
-        productDataSource.set(data: data)
+        dataSource.set(data: data)
         tableView.reloadData()
     }
 }

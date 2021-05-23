@@ -8,8 +8,9 @@
 import Foundation
 
 struct ProductModel: CellObjectView {
-    var title: String
-    var price: Int
-    var condition: String
-    var thumbnail: String
+    let id: String
+    let title: String
+    let price: Int
+    let condition: String
+    let thumbnail: String
 }

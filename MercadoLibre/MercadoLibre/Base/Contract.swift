@@ -7,10 +7,10 @@
 
 import Foundation
 
-protocol BasePresentering {
+protocol BasePresentering: AnyObject {
     func bind(view: BaseView)
     func viewDidLoad()
     func unBind()
 }
 
-protocol BaseView {}
+protocol BaseView: AnyObject {}

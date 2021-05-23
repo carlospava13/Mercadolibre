@@ -6,31 +6,37 @@
 //
 
 import UIKit
+import MLData
 
 protocol CategoryCoordinatorDelegate: AnyObject {
     func showSearch()
 }
 
-final class CategoryCoordinator: Coordinator {
-    var childCoordinators = [Coordinator]()
-    var navigationController: UINavigationController
+final class CategoryCoordinator: AppCoordinator {
 
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    private weak var categoryViewController: CategoryViewController?
+    
+    deinit {
+        parentCoordinator?.didDeinit(self)
     }
-
+    
     func start(category: CategoryModel) {
         let dependencies = CategoryPresenter.InputDependencies(coordinator: self,
-                                                               category: category)
-        let presenter = CategoryPresenter(dependencies: dependencies)
+                                                               category: category,
+                                                               repository: GetProductByCategoryRepository())
         let viewController = CategoryViewController()
-        viewController.presenter = presenter
+        viewController.presenter = CategoryPresenter(dependencies: dependencies)
         navigationController.pushViewController(viewController, animated: true)
+        categoryViewController = viewController
     }
+    
+  
 }
 
 extension CategoryCoordinator: CategoryCoordinatorDelegate {
     func showSearch() {
-        SearchCoordinator(navigationController: navigationController).start()
+        let searchCoordinator = SearchCoordinator(parentCoordinator: self,
+                                                  navigationController: navigationController)
+        searchCoordinator.start()
     }
 }

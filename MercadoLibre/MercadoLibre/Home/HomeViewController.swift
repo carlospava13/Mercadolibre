@@ -30,8 +30,8 @@ final class HomeViewController: BaseViewController {
         CategoryDataSource(cellIdentifier: CategotyCell.self)
     }()
 
-    private var ownerPresenter: HomePresentering {
-        presenter as! HomePresentering
+    private var ownerPresenter: HomePresentering! {
+        presenter as? HomePresentering
     }
 
     override func viewDidLoad() {

@@ -10,27 +10,27 @@ import MLData
 
 final class SearchPresenter: BasePresenter {
     struct InputDependencies {
-         var coordinator: SearchCoordinatorDelegate?
+        let coordinator: SearchCoordinatorDelegate?
+        let repository: GetProductsRepositoring
     }
-    
+
     private var dependencies: InputDependencies
-    
-    private var ownerView: SearchView {
-        view as! SearchView
+
+    private var ownerView: SearchView! {
+        view as? SearchView
     }
 
     init(dependencies: InputDependencies) {
         self.dependencies = dependencies
     }
-    
+
     override func viewDidLoad() {
         ownerView.setTitle(TextML.Product.title)
     }
-    
+
     private func getProduct(_ text: String) {
         ownerView.showTableViewWithAnimation()
-        let respository = GetProductsRepository()
-        respository.getItems(item: text).sink { completion in
+        dependencies.repository.getItems(item: text).sink { completion in
             switch completion {
             case .failure(let error):
                 print(error)
@@ -46,6 +46,7 @@ final class SearchPresenter: BasePresenter {
         var data: [ProductModel] = []
         items.forEach { apiModel in
             data.append(ProductModel(
+                id: apiModel.id,
                 title: apiModel.title,
                 price: apiModel.price,
                 condition: apiModel.condition,
@@ -56,11 +57,14 @@ final class SearchPresenter: BasePresenter {
 }
 
 extension SearchPresenter: SearchPresentering {
-    
+    func productSelected(_ product: ProductModel) {
+        dependencies.coordinator?.showProducDetail(id: product.id)
+    }
+
     func search(product: String) {
         getProduct(product)
     }
-    
+
     func closeSearch() {
         dependencies.coordinator?.close()
     }
