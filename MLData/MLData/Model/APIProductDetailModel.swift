@@ -8,11 +8,16 @@
 import Foundation
 
 public struct APIProductDetailModel: Codable {
-    let title: String
-    let price: Int
-    let pictures: [APIProductDetailPicture]
+    public let title: String
+    public let price: Int
+    public let pictures: [APIProductDetailPicture]
+    public let descriptions: [APIProductDeatilDescription]
 }
 
-struct APIProductDetailPicture: Codable {
-    let secure_url: String
+public struct APIProductDetailPicture: Codable {
+    public let secure_url: String
+}
+
+public struct APIProductDeatilDescription: Codable {
+    public let id: String
 }

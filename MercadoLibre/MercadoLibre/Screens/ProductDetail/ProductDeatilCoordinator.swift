@@ -17,7 +17,8 @@ final class ProductDeatilCoordinator: AppCoordinator {
     
     func start(id: String) {
         let dependencies = ProductDetailPresenter.InputDependencies(idProduct: id,
-                                                                    repository: GetProductDetailRepository())
+                                                                    repository: GetProductDetailRepository(),
+                                                                    descriptionRepository: GetProductDetailDescriptionRepository())
         let presenter = ProductDetailPresenter(dependencies: dependencies)
         let viewController = ProductDetailViewController()
         viewController.presenter = presenter

@@ -17,5 +17,6 @@ public enum EndPointValue {
         case categories = "categories"
         case category = "search?category="
         case items = "items/"
+        case descriptions = "/descriptions"
     }
 }
