@@ -8,7 +8,11 @@
 import Foundation
 
 protocol SearchPresentering: BasePresentering {
+    func search(product: String)
     func closeSearch()
 }
 
-protocol SearchView: BaseView {}
+protocol SearchView: BaseView {
+    func showTableViewWithAnimation()
+    func setupProduct(data: [ProductModel])
+}

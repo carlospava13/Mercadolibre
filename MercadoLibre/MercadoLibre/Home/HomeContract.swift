@@ -8,13 +8,10 @@
 import Foundation
 
 protocol HomePresentering: BasePresentering, CategoryDataSourceDelegate {
-    func search(text: String)
     func getCategories()
 }
 
 protocol HomeView: BaseView {
-    func setupCategory()
-    func setupProducts()
-    func setupProduct(data: [ProductModel])
+    func setTitle(_ text: String)
     func setupCategory(data: [CategoryModel])
 }

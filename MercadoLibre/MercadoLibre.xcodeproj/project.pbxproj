@@ -249,8 +249,8 @@
 		846F2413265A883900A2CACA /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				84043B0D265A03AD00BC9E4D /* SearchViewController.swift */,
 				846F2414265A885B00A2CACA /* SearchCoordinator.swift */,
+				84043B0D265A03AD00BC9E4D /* SearchViewController.swift */,
 				846F2418265A8C8600A2CACA /* SearchPresenter.swift */,
 				846F241C265A8C9100A2CACA /* SearchContract.swift */,
 			);

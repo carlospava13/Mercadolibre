@@ -25,11 +25,11 @@ final class HomePresenter: BasePresenter {
     }
 
     override func viewDidLoad() {
+        ownerView.setTitle(TextML.Category.title)
         getCategories()
     }
 
     func getCategories() {
-        ownerView.setupCategory()
         let repository = GetCategoriesRepository()
         repository.getCategories().sink { completion in
             switch completion {
@@ -51,42 +51,10 @@ final class HomePresenter: BasePresenter {
         }
         ownerView.setupCategory(data: data)
     }
-
-    private func getItems(_ item: String) {
-        ownerView.setupProducts()
-
-        let respository = GetProductsRepository()
-        respository.getItems(item: item).sink { completion in
-            switch completion {
-            case .failure(let error):
-                print(error)
-            case .finished:
-                print("finished")
-            }
-        } receiveValue: { [weak self] result in
-            self?.parse(items: result.results)
-        }.store(in: &subscriptions)
-    }
-
-    private func parse(items: [APIProductModel]) {
-        var data: [ProductModel] = []
-        items.forEach { apiModel in
-            data.append(ProductModel(
-                title: apiModel.title,
-                price: apiModel.price,
-                condition: apiModel.condition,
-                thumbnail: apiModel.thumbnail))
-        }
-        ownerView.setupProduct(data: data)
-    }
 }
 
 extension HomePresenter: HomePresentering {
     func categorySelected(model: CategoryModel) {
         dependencies.coordinator?.showCategory(category: model)
-    }
-    
-    func search(text: String) {
-        getItems(text)
     }
 }

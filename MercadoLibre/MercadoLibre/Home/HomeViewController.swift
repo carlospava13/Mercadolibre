@@ -8,18 +8,11 @@
 import UIKit
 
 final class HomeViewController: BaseViewController {
-
     private lazy var contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-
-//    private lazy var titleLabel: ItemTitleLabel = {
-//        let label = ItemTitleLabel()
-//        label.textColor = .black
-//        return label
-//    }()
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -33,10 +26,6 @@ final class HomeViewController: BaseViewController {
         return tableView
     }()
 
-    private lazy var itemDataSource: ProductDataSource = {
-        ProductDataSource(cellIdentifier: ProductCell.self)
-    }()
-
     private lazy var categoryDataSource: CategoryDataSource = {
         CategoryDataSource(cellIdentifier: CategotyCell.self)
     }()
@@ -48,11 +37,8 @@ final class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
-        //searchBar.delegate = self
         setupViews()
-        tableView.layer.cornerRadius = 10
-        
-        setupCategory()
+        setupTableView()
     }
 
     private func setupViews() {
@@ -81,47 +67,17 @@ final class HomeViewController: BaseViewController {
         ])
     }
 
-    private func setDataSource(_ dataSource: UITableViewDataSource & UITableViewDelegate) {
-        tableView.dataSource = dataSource
-        tableView.delegate = dataSource
-    }
-}
-
-extension HomeViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let text = searchBar.text else {
-            return
-        }
-        ownerPresenter.search(text: text)
-        searchBar.resignFirstResponder()
-    }
-
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.text = nil
-        searchBar.resignFirstResponder()
-        ownerPresenter.getCategories()
+    private func setupTableView() {
+        tableView.dataSource = categoryDataSource
+        tableView.delegate = categoryDataSource
+        categoryDataSource.delegate = ownerPresenter
+        tableView.layer.cornerRadius = 10
     }
 }
 
 extension HomeViewController: HomeView {
-    func setupCategory() {
-        title = TextML.Category.title
-        setDataSource(categoryDataSource)
-        categoryDataSource.delegate = ownerPresenter
-        categoryDataSource.set(data: [])
-        tableView.reloadData()
-    }
-
-    func setupProducts() {
-        title = TextML.Product.title
-        setDataSource(itemDataSource)
-        itemDataSource.set(data: [])
-        tableView.reloadData()
-    }
-
-    func setupProduct(data: [ProductModel]) {
-        itemDataSource.set(data: data)
-        tableView.reloadData()
+    func setTitle(_ text: String) {
+        title = text
     }
 
     func setupCategory(data: [CategoryModel]) {
