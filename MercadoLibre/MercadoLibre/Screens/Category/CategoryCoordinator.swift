@@ -10,6 +10,7 @@ import MLData
 
 protocol CategoryCoordinatorDelegate: AnyObject {
     func showSearch()
+    func showProduct(id: String)
 }
 
 final class CategoryCoordinator: AppCoordinator {
@@ -38,5 +39,12 @@ extension CategoryCoordinator: CategoryCoordinatorDelegate {
         let searchCoordinator = SearchCoordinator(parentCoordinator: self,
                                                   navigationController: navigationController)
         searchCoordinator.start()
+    }
+    
+    func showProduct(id: String) {
+        let productDetailCoordinator = ProductDeatilCoordinator(
+            parentCoordinator: self,
+            navigationController: navigationController)
+        productDetailCoordinator.start(id: id)
     }
 }

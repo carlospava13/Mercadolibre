@@ -9,6 +9,7 @@ import UIKit
 
 protocol HomeCoordinatorDelegate: AnyObject {
     func showCategory(category: CategoryModel)
+    func showSearch()
 }
 
 final class HomeCoordinator: AppCoordinator {
@@ -31,5 +32,11 @@ final class HomeCoordinator: AppCoordinator {
 extension HomeCoordinator: HomeCoordinatorDelegate {    
     func showCategory(category: CategoryModel) {
         categoryCoordinator(category: category)
+    }
+    
+    func showSearch() {
+        let searchCoordinator = SearchCoordinator(parentCoordinator: self,
+                                                  navigationController: navigationController)
+        searchCoordinator.start()
     }
 }

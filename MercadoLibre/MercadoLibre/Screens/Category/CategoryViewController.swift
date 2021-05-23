@@ -48,6 +48,7 @@ final class CategoryViewController: BaseViewController {
 
     private func setupTableView() {
         dataSource = ProductDataSource(cellIdentifier: ProductCell.self)
+        dataSource.delegate = ownerPresenter
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
         tableView.layer.cornerRadius = 10

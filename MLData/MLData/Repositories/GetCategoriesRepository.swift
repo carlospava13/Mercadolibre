@@ -9,7 +9,7 @@ import Combine
 import Foundation
 
 public final class GetCategoriesRepository: BaseRepository, GetCategoryRepositoring {
-    public func getCategories() -> AnyPublisher<[CategoryDto], Error> {
+    public func getCategories() -> AnyPublisher<[APICategoryModel], Error> {
         apiClient.execute(endPointBuilder
             .add(.sites)
             .add(.siteID)

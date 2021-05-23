@@ -51,6 +51,10 @@ final class CategoryPresenter: BasePresenter {
 }
 
 extension CategoryPresenter: CategoryPresentering {
+    func productSelected(_ product: ProductModel) {
+        dependencies.coordinator?.showProduct(id: product.id)
+    }
+
     func showSearch() {
         dependencies.coordinator?.showSearch()
     }

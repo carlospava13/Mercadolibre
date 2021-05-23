@@ -43,7 +43,7 @@ final class HomePresenter: BasePresenter {
         }.store(in: &subscriptions)
     }
 
-    private func parse(categories: [CategoryDto]) {
+    private func parse(categories: [APICategoryModel]) {
         var data: [CategoryModel] = []
         categories.forEach { categoryDto in
             data.append(CategoryModel(id: categoryDto.id,
@@ -56,5 +56,9 @@ final class HomePresenter: BasePresenter {
 extension HomePresenter: HomePresentering {
     func categorySelected(model: CategoryModel) {
         dependencies.coordinator?.showCategory(category: model)
+    }
+    
+    func showSearch() {
+        dependencies.coordinator?.showSearch()
     }
 }

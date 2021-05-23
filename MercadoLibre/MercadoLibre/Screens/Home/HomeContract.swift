@@ -9,6 +9,7 @@ import Foundation
 
 protocol HomePresentering: BasePresentering, CategoryDataSourceDelegate {
     func getCategories()
+    func showSearch()
 }
 
 protocol HomeView: BaseView {

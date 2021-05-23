@@ -8,5 +8,5 @@
 import Combine
 
 public protocol GetCategoryRepositoring {
-    func getCategories() -> AnyPublisher<[CategoryDto], Error>
+    func getCategories() -> AnyPublisher<[APICategoryModel], Error>
 }

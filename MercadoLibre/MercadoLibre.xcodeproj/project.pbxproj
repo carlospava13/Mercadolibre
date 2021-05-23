@@ -256,6 +256,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		8454AE00265ACD0F006CC700 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				849DBB60265A9DBC005D18E3 /* ProductDetail */,
+				846F2413265A883900A2CACA /* Search */,
+				84043ADE2659F81400BC9E4D /* Category */,
+				8497109626593FC400026225 /* Home */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		846F2413265A883900A2CACA /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,18 +303,14 @@
 		8497105326593E1E00026225 /* MercadoLibre */ = {
 			isa = PBXGroup;
 			children = (
-				849DBB60265A9DBC005D18E3 /* ProductDetail */,
-				846F2413265A883900A2CACA /* Search */,
+				8454AE00265ACD0F006CC700 /* Screens */,
 				84043AFC2659FE2600BC9E4D /* Cells */,
 				84043AFB2659FE1000BC9E4D /* DataSource */,
 				8454731F265975F8003DDF17 /* Model */,
-				84A001112659C71100642A71 /* Application */,
 				849710D72659510900026225 /* Localizable */,
 				849710B4265949BA00026225 /* ComponentViews */,
 				849710AB2659479F00026225 /* Helpers */,
 				849710A22659457D00026225 /* Base */,
-				8497109626593FC400026225 /* Home */,
-				84043ADE2659F81400BC9E4D /* Category */,
 				8497105426593E1E00026225 /* AppDelegate.swift */,
 				8497105626593E1E00026225 /* SceneDelegate.swift */,
 				8497105D26593E1F00026225 /* Assets.xcassets */,
@@ -395,13 +402,6 @@
 				849DBB6F265A9DFF005D18E3 /* ProductDetailContract.swift */,
 			);
 			path = ProductDetail;
-			sourceTree = "<group>";
-		};
-		84A001112659C71100642A71 /* Application */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Application;
 			sourceTree = "<group>";
 		};
 		84A001122659C75F00642A71 /* Coordinator */ = {
