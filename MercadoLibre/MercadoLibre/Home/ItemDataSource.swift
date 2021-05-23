@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ItemDataSource: BaseTableViewDataSource<ItemModel, ItemCell> {
+final class ItemDataSource: BaseTableViewDataSource<ProductModel, ProductCell> {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
     }

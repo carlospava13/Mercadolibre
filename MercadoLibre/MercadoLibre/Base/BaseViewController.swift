@@ -8,9 +8,8 @@
 import UIKit
 
 class BaseViewController: UIViewController, BaseView {
-    
     var presenter: BasePresentering!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.bind(view: self)
@@ -20,7 +19,7 @@ class BaseViewController: UIViewController, BaseView {
         view.backgroundColor = .white
         view.addGradientView(color: .yellowML)
     }
-    
+
     deinit {
         presenter?.unBind()
     }

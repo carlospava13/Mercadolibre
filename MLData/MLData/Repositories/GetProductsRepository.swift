@@ -7,8 +7,8 @@
 
 import Combine
 
-public final class GetItemRepository: BaseRepository, GetItemsRepositoring {
-    public func getItems(item: String) -> AnyPublisher<APIItemResultModel, Error> {
+public final class GetProductsRepository: BaseRepository, GetProductsRepositoring {
+    public func getItems(item: String) -> AnyPublisher<APIProductResultModel, Error> {
         apiClient.execute(endPointBuilder
             .add(.sites)
             .add(.siteID)

@@ -7,6 +7,7 @@
 
 import Combine
 import MLData
+
 final class HomePresenter: BasePresenter {
     private var ownerView: HomeView {
         view as! HomeView
@@ -17,9 +18,15 @@ final class HomePresenter: BasePresenter {
     }
 
     func getCategories() {
+        ownerView.setupCategory()
         let repository = GetCategoriesRepository()
-        repository.getCategories().sink { completion in
-            print(completion)
+        repository.getCategories().sink { [weak self] completion in
+            switch completion {
+            case .failure(let error):
+                print(error)
+            case .finished:
+               print("finished")
+            }
         } receiveValue: { [weak self] categories in
             self?.parse(categories: categories)
         }.store(in: &subscriptions)
@@ -34,18 +41,25 @@ final class HomePresenter: BasePresenter {
     }
 
     private func getItems(_ item: String) {
-        let respository = GetItemRepository()
+        ownerView.setupProducts()
+
+        let respository = GetProductsRepository()
         respository.getItems(item: item).sink { completion in
-            print(completion)
+            switch completion {
+            case .failure(let error):
+                print(error)
+            case .finished:
+                print("finished")
+            }
         } receiveValue: { [weak self] result in
             self?.parse(items: result.results)
         }.store(in: &subscriptions)
     }
 
-    private func parse(items: [APIItemModel]) {
-        var data: [ItemModel] = []
+    private func parse(items: [APIProductModel]) {
+        var data: [ProductModel] = []
         items.forEach { apiModel in
-            data.append(ItemModel(
+            data.append(ProductModel(
                 title: apiModel.title,
                 price: apiModel.price,
                 condition: apiModel.condition,

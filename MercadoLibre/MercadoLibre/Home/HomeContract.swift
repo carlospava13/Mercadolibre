@@ -13,6 +13,8 @@ protocol HomePresentering: BasePresentering {
 }
 
 protocol HomeView: BaseView {
-    func setupProduct(data: [ItemModel])
+    func setupCategory()
+    func setupProducts()
+    func setupProduct(data: [ProductModel])
     func setupCategory(data: [CategoryModel])
 }

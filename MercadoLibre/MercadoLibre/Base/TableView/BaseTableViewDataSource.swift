@@ -10,6 +10,7 @@ import UIKit
 class BaseTableViewDataSource<Data: CellObjectView, CELL: BaseTableViewCell<Data>>: NSObject,
                                                                                     UITableViewDataSource,
                                                                                     UITableViewDelegate{
+    
     private var data: [Data] = []
     private var cellIdentifier: String
     init(cellIdentifier: CELL.Type) {

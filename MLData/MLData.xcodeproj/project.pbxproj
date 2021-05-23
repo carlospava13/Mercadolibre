@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		845472DF26596516003DDF17 /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845472DE26596516003DDF17 /* HTTPStatusCode.swift */; };
 		845472ED26596AA6003DDF17 /* GetItemsRepositoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845472EC26596AA6003DDF17 /* GetItemsRepositoring.swift */; };
-		845472F426596B56003DDF17 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845472F326596B56003DDF17 /* Item.swift */; };
-		845472FC26596D11003DDF17 /* GetItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845472FB26596D11003DDF17 /* GetItemRepository.swift */; };
+		845472F426596B56003DDF17 /* APIProductResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845472F326596B56003DDF17 /* APIProductResultModel.swift */; };
+		845472FC26596D11003DDF17 /* GetProductsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845472FB26596D11003DDF17 /* GetProductsRepository.swift */; };
 		848FDEC02659A8A400FBA11B /* GetCategoriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FDEBF2659A8A400FBA11B /* GetCategoriesRepository.swift */; };
 		848FDEC42659A8D600FBA11B /* GetCategoryRepositoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FDEC32659A8D600FBA11B /* GetCategoryRepositoring.swift */; };
 		848FDEC82659A8F900FBA11B /* CategoryDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FDEC72659A8F900FBA11B /* CategoryDto.swift */; };
@@ -37,8 +37,8 @@
 /* Begin PBXFileReference section */
 		845472DE26596516003DDF17 /* HTTPStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
 		845472EC26596AA6003DDF17 /* GetItemsRepositoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetItemsRepositoring.swift; sourceTree = "<group>"; };
-		845472F326596B56003DDF17 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		845472FB26596D11003DDF17 /* GetItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetItemRepository.swift; sourceTree = "<group>"; };
+		845472F326596B56003DDF17 /* APIProductResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProductResultModel.swift; sourceTree = "<group>"; };
+		845472FB26596D11003DDF17 /* GetProductsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProductsRepository.swift; sourceTree = "<group>"; };
 		848FDEBF2659A8A400FBA11B /* GetCategoriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategoriesRepository.swift; sourceTree = "<group>"; };
 		848FDEC32659A8D600FBA11B /* GetCategoryRepositoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategoryRepositoring.swift; sourceTree = "<group>"; };
 		848FDEC72659A8F900FBA11B /* CategoryDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDto.swift; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 		845472EA26596A28003DDF17 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				845472FB26596D11003DDF17 /* GetItemRepository.swift */,
+				845472FB26596D11003DDF17 /* GetProductsRepository.swift */,
 				848FDEBF2659A8A400FBA11B /* GetCategoriesRepository.swift */,
 				848FDED52659C0E800FBA11B /* BaseRepository.swift */,
 			);
@@ -96,7 +96,7 @@
 		845472F226596B4B003DDF17 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				845472F326596B56003DDF17 /* Item.swift */,
+				845472F326596B56003DDF17 /* APIProductResultModel.swift */,
 				848FDEC72659A8F900FBA11B /* CategoryDto.swift */,
 			);
 			path = Model;
@@ -264,13 +264,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B2252B26595A6A00A5A1C8 /* EndPointBuilder.swift in Sources */,
-				845472FC26596D11003DDF17 /* GetItemRepository.swift in Sources */,
+				845472FC26596D11003DDF17 /* GetProductsRepository.swift in Sources */,
 				84B225232659583300A5A1C8 /* APIClienting.swift in Sources */,
 				84B2253126595AA200A5A1C8 /* EndPoint.swift in Sources */,
 				845472DF26596516003DDF17 /* HTTPStatusCode.swift in Sources */,
 				848FDEC42659A8D600FBA11B /* GetCategoryRepositoring.swift in Sources */,
 				848FDED62659C0E800FBA11B /* BaseRepository.swift in Sources */,
-				845472F426596B56003DDF17 /* Item.swift in Sources */,
+				845472F426596B56003DDF17 /* APIProductResultModel.swift in Sources */,
 				848FDEC02659A8A400FBA11B /* GetCategoriesRepository.swift in Sources */,
 				848FDEC82659A8F900FBA11B /* CategoryDto.swift in Sources */,
 				84B2252726595A2800A5A1C8 /* APIClient.swift in Sources */,

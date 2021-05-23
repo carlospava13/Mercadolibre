@@ -5,8 +5,6 @@
 //  Created by Carlos Pava on 22/05/21.
 //
 
-import Combine
-import MLData
 import UIKit
 
 final class HomeViewController: BaseViewController {
@@ -27,6 +25,7 @@ final class HomeViewController: BaseViewController {
     private lazy var titleLabel: ItemTitleLabel = {
         let label = ItemTitleLabel()
         label.textColor = .black
+
         return label
     }()
 
@@ -35,14 +34,16 @@ final class HomeViewController: BaseViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.indicatorStyle = .white
-        tableView.register(cell: ItemCell.self)
+        tableView.register(cell: ProductCell.self)
         tableView.register(cell: CategotyCell.self)
         tableView.layer.masksToBounds = true
+        tableView.separatorStyle = .none
+
         return tableView
     }()
 
     private lazy var itemDataSource: ItemDataSource = {
-        ItemDataSource(cellIdentifier: ItemCell.self)
+        ItemDataSource(cellIdentifier: ProductCell.self)
     }()
 
     private lazy var categoryDataSource: CategoryDataSource = {
@@ -58,6 +59,7 @@ final class HomeViewController: BaseViewController {
         setupSearchBar()
         setupViews()
         tableView.layer.cornerRadius = 10
+        setupCategory()
     }
 
     private func setupViews() {
@@ -82,7 +84,8 @@ final class HomeViewController: BaseViewController {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            titleLabel.heightAnchor.constraint(equalToConstant: 25)
         ])
     }
 
@@ -124,16 +127,26 @@ extension HomeViewController: UISearchBarDelegate {
 }
 
 extension HomeViewController: HomeView {
-    func setupProduct(data: [ItemModel]) {
+    func setupCategory() {
+        titleLabel.text = TextML.Category.title
+        setDataSource(categoryDataSource)
+        categoryDataSource.set(data: [])
+        tableView.reloadData()
+    }
+
+    func setupProducts() {
         titleLabel.text = TextML.Product.title
         setDataSource(itemDataSource)
+        itemDataSource.set(data: [])
+        tableView.reloadData()
+    }
+
+    func setupProduct(data: [ProductModel]) {
         itemDataSource.set(data: data)
         tableView.reloadData()
     }
 
     func setupCategory(data: [CategoryModel]) {
-        titleLabel.text = TextML.Category.title
-        setDataSource(categoryDataSource)
         categoryDataSource.set(data: data)
         tableView.reloadData()
     }

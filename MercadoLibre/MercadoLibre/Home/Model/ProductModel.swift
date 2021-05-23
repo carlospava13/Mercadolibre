@@ -1,5 +1,5 @@
 //
-//  ItemModel.swift
+//  ProductModel.swift
 //  MercadoLibre
 //
 //  Created by Carlos Pava on 22/05/21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ItemModel: CellObjectView {
+struct ProductModel: CellObjectView {
     var title: String
     var price: Int
     var condition: String

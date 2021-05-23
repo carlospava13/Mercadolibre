@@ -7,6 +7,6 @@
 
 import Combine
 
-public protocol GetItemsRepositoring {
-    func getItems(item: String) -> AnyPublisher<APIItemResultModel, Error>
+public protocol GetProductsRepositoring {
+    func getItems(item: String) -> AnyPublisher<APIProductResultModel, Error>
 }
