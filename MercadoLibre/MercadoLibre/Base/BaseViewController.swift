@@ -14,10 +14,9 @@ class BaseViewController: UIViewController, BaseView {
         super.viewDidLoad()
         presenter.bind(view: self)
         presenter?.viewDidLoad()
-        setNeedsStatusBarAppearanceUpdate()
+        navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.barTintColor = .yellowML
         navigationController?.removeLines()
-       
     }
     
     override func viewWillLayoutSubviews() {

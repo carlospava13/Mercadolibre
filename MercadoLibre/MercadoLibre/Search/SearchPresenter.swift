@@ -23,6 +23,10 @@ final class SearchPresenter: BasePresenter {
         self.dependencies = dependencies
     }
     
+    override func viewDidLoad() {
+        ownerView.setTitle(TextML.Product.title)
+    }
+    
     private func getProduct(_ text: String) {
         ownerView.showTableViewWithAnimation()
         let respository = GetProductsRepository()

@@ -28,7 +28,7 @@ final class CategoryViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.prefersLargeTitles = true
+        
         navigationItem.rightBarButtonItem =    UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(search(sender:)))
         setTableViewConstraints()
         setupTableView()

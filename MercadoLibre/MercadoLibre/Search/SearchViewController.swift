@@ -95,6 +95,10 @@ final class SearchViewController: BaseViewController {
 }
 
 extension SearchViewController: SearchView {
+    func setTitle(_ text: String) {
+        title = text
+    }
+    
     func showTableViewWithAnimation() {
         UIView.animate(withDuration: 0.5) {
             self.tableView.alpha = 1
