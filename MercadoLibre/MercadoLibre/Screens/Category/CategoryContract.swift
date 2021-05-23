@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol CategoryPresentering: BasePresentering {
+protocol CategoryPresentering: ProductDataSourceDelegate, BasePresentering {
     func showSearch()
 }
 

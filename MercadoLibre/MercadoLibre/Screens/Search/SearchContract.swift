@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol SearchPresentering: BasePresentering {
+protocol SearchPresentering: BasePresentering, ProductDataSourceDelegate {
     func search(product: String)
     func closeSearch()
 }

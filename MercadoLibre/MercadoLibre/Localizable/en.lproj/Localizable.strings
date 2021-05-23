@@ -12,3 +12,6 @@
 
 "homeView.categoryTitle" = "Categorias";
 "homeView.itemTitle" = "Productos";
+
+//MARK: Product Detail
+"productDetailViewer.description" = "Descripción";

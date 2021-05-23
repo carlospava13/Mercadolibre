@@ -19,4 +19,8 @@ enum TextML {
     enum Product {
         static let title = "homeView.itemTitle".localized
     }
+    
+    enum ProducDetail {
+        static let descriptionTitle = "productDetailViewer.description".localized
+    }
 }

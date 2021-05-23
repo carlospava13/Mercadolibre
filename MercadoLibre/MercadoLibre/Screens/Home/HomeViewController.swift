@@ -30,14 +30,19 @@ final class HomeViewController: BaseViewController {
         CategoryDataSource(cellIdentifier: CategotyCell.self)
     }()
 
-    private var ownerPresenter: HomePresentering {
-        presenter as! HomePresentering
+    private var ownerPresenter: HomePresentering! {
+        presenter as? HomePresentering
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupRightBarButton()
         setupViews()
         setupTableView()
+    }
+    
+    private func setupRightBarButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(search))
     }
 
     private func setupViews() {
@@ -71,6 +76,10 @@ final class HomeViewController: BaseViewController {
         tableView.delegate = categoryDataSource
         categoryDataSource.delegate = ownerPresenter
         tableView.layer.cornerRadius = 10
+    }
+    
+    @objc func search() {
+        ownerPresenter.showSearch()
     }
 }
 

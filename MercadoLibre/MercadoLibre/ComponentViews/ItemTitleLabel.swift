@@ -8,6 +8,14 @@
 import UIKit
 
 final class ItemTitleLabel: UILabel {
+    
+    var sizeFont: CGFloat = 14 {
+        willSet {
+            font = UIFont.systemFont(ofSize: newValue,
+                                     weight: UIFont.Weight.semibold)
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -18,7 +26,7 @@ final class ItemTitleLabel: UILabel {
     }
     
     private func setup() {
-        font = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.semibold)
+        font = UIFont.systemFont(ofSize: sizeFont, weight: UIFont.Weight.semibold)
         translatesAutoresizingMaskIntoConstraints = false
         numberOfLines = 0
         textColor = .gray

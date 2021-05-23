@@ -18,20 +18,21 @@ final class CategoryViewController: BaseViewController {
         return tableView
     }()
 
-    private lazy var dataSource: ProductDataSource = {
-        ProductDataSource(cellIdentifier: ProductCell.self)
-    }()
-    
+    private var dataSource: ProductDataSource!
+
     private var ownerPresenter: CategoryPresentering {
         presenter as! CategoryPresentering
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationItem.rightBarButtonItem =    UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(search(sender:)))
+        setupRightBarButton()
         setTableViewConstraints()
         setupTableView()
+    }
+    
+    private func setupRightBarButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(search(sender:)))
     }
 
     private func setTableViewConstraints() {
@@ -46,6 +47,8 @@ final class CategoryViewController: BaseViewController {
     }
 
     private func setupTableView() {
+        dataSource = ProductDataSource(cellIdentifier: ProductCell.self)
+        dataSource.delegate = ownerPresenter
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
         tableView.layer.cornerRadius = 10
@@ -64,20 +67,5 @@ extension CategoryViewController: CategoryView {
     func setupProduct(data: [ProductModel]) {
         dataSource.set(data: data)
         tableView.reloadData()
-    }
-}
-
-extension CategoryViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let text = searchBar.text else {
-            return
-        }
-
-        searchBar.resignFirstResponder()
-    }
-
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.text = nil
-        searchBar.resignFirstResponder()
     }
 }
