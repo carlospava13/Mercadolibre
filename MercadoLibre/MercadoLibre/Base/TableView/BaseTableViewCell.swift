@@ -6,10 +6,9 @@
 //
 
 import UIKit
-
-protocol CellObjectView { }
+protocol CellObjectView {}
 
 class BaseTableViewCell<T: CellObjectView>: UITableViewCell {
-    ///this method must be implement to set data
+    /// this method must be implement to set data
     func set(data: T) {}
 }

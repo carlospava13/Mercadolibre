@@ -9,9 +9,10 @@ import UIKit
 
 extension UIView {
     func addGradientView(color: UIColor) {
+        autoresizingMask = [.flexibleWidth, .flexibleHeight]
         let gradientLayer = CAGradientLayer()
-        gradientLayer.frame.size = CGSize(width: frame.width, height: frame.height)
+        gradientLayer.frame.size = CGSize(width: bounds.width, height: bounds.height)
         gradientLayer.colors = [color.cgColor, UIColor.white.cgColor]
-        layer.addSublayer(gradientLayer)
+        layer.insertSublayer(gradientLayer, at: 0)
     }
 }

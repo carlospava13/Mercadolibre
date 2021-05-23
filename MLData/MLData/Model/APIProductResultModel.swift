@@ -1,5 +1,5 @@
 //
-//  Item.swift
+//  APIProductResultModel.swift
 //  MLData
 //
 //  Created by Carlos Pava on 22/05/21.
@@ -7,11 +7,11 @@
 
 import Foundation
 
-public struct APIItemResultModel: Codable {
-    public let results: [APIItemModel]
+public struct APIProductResultModel: Codable {
+    public let results: [APIProductModel]
 }
 
-public struct APIItemModel: Codable {
+public struct APIProductModel: Codable {
     public var id: String
     public var title: String
     public var price: Int

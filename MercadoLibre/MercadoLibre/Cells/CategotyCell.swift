@@ -27,7 +27,7 @@ final class CategotyCell: BaseTableViewCell<CategoryModel> {
             itemTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 24),
             itemTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
             itemTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
-            itemTitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -24)
+            itemTitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -24),
         ])
     }
     

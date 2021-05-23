@@ -7,13 +7,24 @@
 
 import UIKit
 
-class BaseViewController: UIViewController {
-    
+class BaseViewController: UIViewController, BaseView {
+    var presenter: BasePresentering!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNeedsStatusBarAppearanceUpdate()
-        navigationController?.navigationBar.backgroundColor = .yellowML
-        view.backgroundColor = .white
+        presenter.bind(view: self)
+        presenter?.viewDidLoad()
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.barTintColor = .yellowML
+        navigationController?.removeLines()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         view.addGradientView(color: .yellowML)
+    }
+    
+    deinit {
+        presenter?.unBind()
     }
 }

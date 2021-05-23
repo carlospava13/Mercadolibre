@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  SearchViewController.swift
 //  MercadoLibre
 //
 //  Created by Carlos Pava on 22/05/21.
@@ -7,44 +7,61 @@
 
 import UIKit
 
-final class HomeViewController: BaseViewController {
+final class SearchViewController: BaseViewController {
+    lazy var searchBar: SearchBarML = {
+        let searchBar = SearchBarML()
+        searchBar.placeholder = TextML.Search.placeholder
+        return searchBar
+    }()
+    
     private lazy var contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.indicatorStyle = .white
         tableView.register(cell: ProductCell.self)
-        tableView.register(cell: CategotyCell.self)
         tableView.layer.masksToBounds = true
         tableView.separatorStyle = .none
+        tableView.alpha = 0
         return tableView
     }()
-
-    private lazy var categoryDataSource: CategoryDataSource = {
-        CategoryDataSource(cellIdentifier: CategotyCell.self)
+    
+    private lazy var productDataSource: ProductDataSource = {
+        ProductDataSource(cellIdentifier: ProductCell.self)
     }()
 
-    private var ownerPresenter: HomePresentering {
-        presenter as! HomePresentering
+    private var ownerPresenter: SearchPresentering {
+        presenter as! SearchPresentering
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
+        searchBar.delegate = self
+        setLeftBarButtonItem()
+        setupSearchBar()
+        setContentViewConstraints()
+        setTableViewConstraints()
         setupTableView()
     }
 
-    private func setupViews() {
-        setContentViewConstraints()
-        setTableViewConstraints()
+    private func setLeftBarButtonItem() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close,
+                                                           target: self,
+                                                           action: #selector(close))
     }
 
+    private func setupSearchBar() {
+        navigationController?.navigationBar.topItem?.titleView = searchBar
+        navigationController?.removeLines()
+    }
+    
     private func setContentViewConstraints() {
         view.addSubview(contentView)
         let guide = view.safeAreaLayoutGuide
@@ -65,22 +82,41 @@ final class HomeViewController: BaseViewController {
             tableView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
         ])
     }
-
+    
     private func setupTableView() {
-        tableView.dataSource = categoryDataSource
-        tableView.delegate = categoryDataSource
-        categoryDataSource.delegate = ownerPresenter
+        tableView.dataSource = productDataSource
+        tableView.delegate = productDataSource
         tableView.layer.cornerRadius = 10
+    }
+
+    @objc func close() {
+        ownerPresenter.closeSearch()
     }
 }
 
-extension HomeViewController: HomeView {
+extension SearchViewController: SearchView {
     func setTitle(_ text: String) {
         title = text
     }
-
-    func setupCategory(data: [CategoryModel]) {
-        categoryDataSource.set(data: data)
+    
+    func showTableViewWithAnimation() {
+        UIView.animate(withDuration: 0.5) {
+            self.tableView.alpha = 1
+        }
+    }
+    
+    func setupProduct(data: [ProductModel]) {
+        productDataSource.set(data: data)
         tableView.reloadData()
+    }
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.text else {
+            return
+        }
+        ownerPresenter.search(product: text)
+        searchBar.resignFirstResponder()
     }
 }

@@ -8,7 +8,7 @@
 import UIKit
 import SDWebImage
 
-final class ItemCell: BaseTableViewCell<ItemModel> {
+final class ProductCell: BaseTableViewCell<ProductModel> {
     private lazy var itemImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -40,7 +40,7 @@ final class ItemCell: BaseTableViewCell<ItemModel> {
         addSubview(itemTitleLabel)
         NSLayoutConstraint.activate([
             itemTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-            itemTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            itemTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
         ])
     }
     
@@ -74,7 +74,7 @@ final class ItemCell: BaseTableViewCell<ItemModel> {
     }
     
 
-    override func set(data: ItemModel) {
+    override func set(data: ProductModel) {
         itemTitleLabel.text = data.title
         itemPriceLabel.text = data.price.setCurrentMoneyFormatter()
         itemConditionLabel.text = data.condition
