@@ -9,6 +9,7 @@ import MLData
 
 final class CategoryPresenter: BasePresenter {
     struct InputDependencies {
+        var coordinator: CategoryCoordinatorDelegate?
         let category: CategoryModel
     }
 
@@ -48,4 +49,8 @@ final class CategoryPresenter: BasePresenter {
     }
 }
 
-extension CategoryPresenter: CategoryPresentering {}
+extension CategoryPresenter: CategoryPresentering {
+    func showSearch() {
+        dependencies.coordinator?.showSearch()
+    }
+}

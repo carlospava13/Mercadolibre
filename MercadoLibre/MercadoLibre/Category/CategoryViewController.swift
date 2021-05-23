@@ -21,13 +21,15 @@ final class CategoryViewController: BaseViewController {
     private lazy var dataSource: ProductDataSource = {
         ProductDataSource(cellIdentifier: ProductCell.self)
     }()
+    
+    private var ownerPresenter: CategoryPresentering {
+        presenter as! CategoryPresentering
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
-        let searchButton = UIBarButtonItem(systemItem: .search)
-        searchButton.action = #selector(search(sender: ))
-        navigationItem.rightBarButtonItem = searchButton
+        navigationItem.rightBarButtonItem =    UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(search(sender:)))
         setTableViewConstraints()
         setupTableView()
     }
@@ -49,7 +51,9 @@ final class CategoryViewController: BaseViewController {
         tableView.layer.cornerRadius = 10
     }
 
-    @objc func search(sender: UIButton) {}
+    @objc func search(sender: UIBarButtonItem) {
+        ownerPresenter.showSearch()
+    }
 }
 
 extension CategoryViewController: CategoryView {

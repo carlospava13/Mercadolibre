@@ -15,11 +15,16 @@ class BaseViewController: UIViewController, BaseView {
         presenter.bind(view: self)
         presenter?.viewDidLoad()
         setNeedsStatusBarAppearanceUpdate()
-        navigationController?.navigationBar.backgroundColor = .yellowML
-        view.backgroundColor = .white
+        navigationController?.navigationBar.barTintColor = .yellowML
+        navigationController?.removeLines()
+       
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         view.addGradientView(color: .yellowML)
     }
-
+    
     deinit {
         presenter?.unBind()
     }

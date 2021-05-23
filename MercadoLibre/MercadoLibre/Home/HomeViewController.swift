@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class HomeViewController: SearchViewController {
+final class HomeViewController: BaseViewController {
 
     private lazy var contentView: UIView = {
         let view = UIView()
@@ -48,7 +48,7 @@ final class HomeViewController: SearchViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
-        searchBar.delegate = self
+        //searchBar.delegate = self
         setupViews()
         tableView.layer.cornerRadius = 10
         

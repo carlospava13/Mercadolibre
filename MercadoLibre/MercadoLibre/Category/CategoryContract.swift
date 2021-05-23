@@ -7,7 +7,9 @@
 
 import Foundation
 
-protocol CategoryPresentering: BasePresentering {}
+protocol CategoryPresentering: BasePresentering {
+    func showSearch()
+}
 
 protocol CategoryView: BaseView {
     func setTilte(_ text: String)
