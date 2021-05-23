@@ -49,13 +49,14 @@ final class HomeViewController: BaseViewController {
         CategoryDataSource(cellIdentifier: CategotyCell.self)
     }()
 
-    var subscriptions = Set<AnyCancellable>()
+    private var ownerPresenter: HomePresentering {
+        presenter as! HomePresentering
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchBar()
         setupViews()
-        getCategories()
         tableView.layer.cornerRadius = 10
     }
 
@@ -99,74 +100,41 @@ final class HomeViewController: BaseViewController {
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
     }
-    
+
     private func setupSearchBar() {
         navigationController?.navigationBar.topItem?.titleView = searchBar
         navigationController?.removeLines()
     }
+}
 
-    private func getCategories() {
-        let repository = GetCategoriesRepository()
-        repository.getCategories().sink { completion in
-            print(completion)
-        } receiveValue: { [weak self] categories in
-            self?.parse(categories: categories)
-        }.store(in: &subscriptions)
-    }
-
-    private func parse(categories: [CategoryDto]) {
-        var data: [CategoryModel] = []
-        categories.forEach { categoryDto in
-            data.append(CategoryModel(title: categoryDto.name))
+extension HomeViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.text else {
+            return
         }
-        setupCategory(data: data)
+        ownerPresenter.search(text: text)
+        searchBar.resignFirstResponder()
     }
 
-    private func getItems(_ item: String) {
-        let respository = GetItemRepository()
-        respository.getItems(item: item).sink { completion in
-            print(completion)
-        } receiveValue: { [weak self] result in
-            self?.parse(items: result.results)
-        }.store(in: &subscriptions)
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = nil
+        searchBar.resignFirstResponder()
+        ownerPresenter.getCategories()
     }
+}
 
-    private func parse(items: [APIItemModel]) {
-        var data: [ItemModel] = []
-        items.forEach { apiModel in
-            data.append(ItemModel(
-                title: apiModel.title,
-                price: apiModel.price,
-                condition: apiModel.condition,
-                thumbnail: apiModel.thumbnail))
-        }
-        setupProduct(data: data)
-    }
-    
-    private func setupProduct(data: [ItemModel]) {
+extension HomeViewController: HomeView {
+    func setupProduct(data: [ItemModel]) {
         titleLabel.text = TextML.Product.title
         setDataSource(itemDataSource)
         itemDataSource.set(data: data)
         tableView.reloadData()
     }
 
-    private func setupCategory(data: [CategoryModel]) {
+    func setupCategory(data: [CategoryModel]) {
         titleLabel.text = TextML.Category.title
         setDataSource(categoryDataSource)
         categoryDataSource.set(data: data)
         tableView.reloadData()
-    }
-}
-
-extension HomeViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        getItems(searchBar.text!)
-        searchBar.resignFirstResponder()
-    }
-
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        getCategories()
-        searchBar.text = nil
-        searchBar.resignFirstResponder()
     }
 }
