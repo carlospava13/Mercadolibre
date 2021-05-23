@@ -15,5 +15,6 @@ public enum EndPointValue {
         case search = "search?q="
         case all = "all"
         case categories = "categories"
+        case category = "search?category="
     }
 }

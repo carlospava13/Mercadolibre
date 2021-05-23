@@ -7,14 +7,7 @@
 
 import UIKit
 
-final class HomeViewController: BaseViewController {
-    private lazy var searchBar: SearchBarML = {
-        let searchBar = SearchBarML()
-        searchBar.delegate = self
-        searchBar.placeholder = TextML.Search.placeholder
-        searchBar.showsCancelButton = true
-        return searchBar
-    }()
+final class HomeViewController: SearchViewController {
 
     private lazy var contentView: UIView = {
         let view = UIView()
@@ -22,12 +15,11 @@ final class HomeViewController: BaseViewController {
         return view
     }()
 
-    private lazy var titleLabel: ItemTitleLabel = {
-        let label = ItemTitleLabel()
-        label.textColor = .black
-
-        return label
-    }()
+//    private lazy var titleLabel: ItemTitleLabel = {
+//        let label = ItemTitleLabel()
+//        label.textColor = .black
+//        return label
+//    }()
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -38,12 +30,11 @@ final class HomeViewController: BaseViewController {
         tableView.register(cell: CategotyCell.self)
         tableView.layer.masksToBounds = true
         tableView.separatorStyle = .none
-
         return tableView
     }()
 
-    private lazy var itemDataSource: ItemDataSource = {
-        ItemDataSource(cellIdentifier: ProductCell.self)
+    private lazy var itemDataSource: ProductDataSource = {
+        ProductDataSource(cellIdentifier: ProductCell.self)
     }()
 
     private lazy var categoryDataSource: CategoryDataSource = {
@@ -56,15 +47,16 @@ final class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupSearchBar()
+        navigationController?.navigationBar.prefersLargeTitles = true
+        searchBar.delegate = self
         setupViews()
         tableView.layer.cornerRadius = 10
+        
         setupCategory()
     }
 
     private func setupViews() {
         setContentViewConstraints()
-        setTitleLabelConstraints()
         setTableViewConstraints()
     }
 
@@ -79,20 +71,10 @@ final class HomeViewController: BaseViewController {
         ])
     }
 
-    private func setTitleLabelConstraints() {
-        contentView.addSubview(titleLabel)
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            titleLabel.heightAnchor.constraint(equalToConstant: 25)
-        ])
-    }
-
     private func setTableViewConstraints() {
         contentView.addSubview(tableView)
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
+            tableView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
             tableView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             tableView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             tableView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
@@ -102,11 +84,6 @@ final class HomeViewController: BaseViewController {
     private func setDataSource(_ dataSource: UITableViewDataSource & UITableViewDelegate) {
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
-    }
-
-    private func setupSearchBar() {
-        navigationController?.navigationBar.topItem?.titleView = searchBar
-        navigationController?.removeLines()
     }
 }
 
@@ -128,14 +105,15 @@ extension HomeViewController: UISearchBarDelegate {
 
 extension HomeViewController: HomeView {
     func setupCategory() {
-        titleLabel.text = TextML.Category.title
+        title = TextML.Category.title
         setDataSource(categoryDataSource)
+        categoryDataSource.delegate = ownerPresenter
         categoryDataSource.set(data: [])
         tableView.reloadData()
     }
 
     func setupProducts() {
-        titleLabel.text = TextML.Product.title
+        title = TextML.Product.title
         setDataSource(itemDataSource)
         itemDataSource.set(data: [])
         tableView.reloadData()

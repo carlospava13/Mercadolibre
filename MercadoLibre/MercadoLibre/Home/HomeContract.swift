@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol HomePresentering: BasePresentering {
+protocol HomePresentering: BasePresentering, CategoryDataSourceDelegate {
     func search(text: String)
     func getCategories()
 }

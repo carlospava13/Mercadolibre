@@ -8,5 +8,6 @@
 import Foundation
 
 struct CategoryModel: CellObjectView {
+    let id: String
     let title: String
 }

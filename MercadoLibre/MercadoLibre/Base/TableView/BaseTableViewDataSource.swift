@@ -11,7 +11,7 @@ class BaseTableViewDataSource<Data: CellObjectView, CELL: BaseTableViewCell<Data
                                                                                     UITableViewDataSource,
                                                                                     UITableViewDelegate{
     
-    private var data: [Data] = []
+    var data: [Data] = []
     private var cellIdentifier: String
     init(cellIdentifier: CELL.Type) {
         self.cellIdentifier = String(describing: cellIdentifier)
