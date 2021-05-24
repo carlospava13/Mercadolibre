@@ -8,7 +8,9 @@
 import UIKit
 
 class BaseViewController: UIViewController, BaseView {
+ 
     var presenter: BasePresentering?
+    lazy var spinner = UIActivityIndicatorView(style: .large)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,5 +28,13 @@ class BaseViewController: UIViewController, BaseView {
 
     deinit {
         presenter?.unBind()
+    }
+    
+    func showLoading() {
+        spinner.startAnimating()
+    }
+    
+    func hideLoading() {
+        spinner.stopAnimating()
     }
 }

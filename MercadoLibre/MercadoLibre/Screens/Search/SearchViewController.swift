@@ -20,6 +20,12 @@ final class SearchViewController: BaseViewController {
         return view
     }()
 
+    private lazy var emptyStateView: EmptyStateView = {
+        let view = EmptyStateView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -33,7 +39,7 @@ final class SearchViewController: BaseViewController {
     }()
 
     private var dataSource: ProductDataSource!
-    
+
     private var ownerPresenter: SearchPresentering {
         presenter as! SearchPresentering
     }
@@ -44,6 +50,7 @@ final class SearchViewController: BaseViewController {
         setLeftBarButtonItem()
         setupSearchBar()
         setContentViewConstraints()
+        setEmptyStateViewConstraints()
         setTableViewConstraints()
         setupTableView()
     }
@@ -68,6 +75,14 @@ final class SearchViewController: BaseViewController {
             contentView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
             contentView.bottomAnchor.constraint(equalTo: guide.bottomAnchor)
+        ])
+    }
+    
+    private func setEmptyStateViewConstraints() {
+        contentView.addSubview(emptyStateView)
+        NSLayoutConstraint.activate([
+            emptyStateView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            emptyStateView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
         ])
     }
 
@@ -95,6 +110,10 @@ final class SearchViewController: BaseViewController {
 }
 
 extension SearchViewController: SearchView {
+    func setEmptyState(description: String) {
+        emptyStateView.set(description: description)
+    }
+    
     func setTitle(_ text: String) {
         title = text
     }

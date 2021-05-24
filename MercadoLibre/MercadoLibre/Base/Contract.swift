@@ -13,4 +13,7 @@ protocol BasePresentering: AnyObject {
     func unBind()
 }
 
-protocol BaseView: AnyObject {}
+protocol BaseView: AnyObject {
+    func showLoading()
+    func hideLoading()
+}

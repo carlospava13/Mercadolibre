@@ -61,6 +61,7 @@
 		849DBB74265AA8CD005D18E3 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DBB73265AA8CD005D18E3 /* AppCoordinator.swift */; };
 		84A001142659C77000642A71 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A001132659C77000642A71 /* Coordinator.swift */; };
 		84A001182659C79E00642A71 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A001172659C79E00642A71 /* HomeCoordinator.swift */; };
+		84C45DF4265B2AFF00EBCB57 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C45DF3265B2AFF00EBCB57 /* EmptyStateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +154,7 @@
 		849DBB73265AA8CD005D18E3 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		84A001132659C77000642A71 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		84A001172659C79E00642A71 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		84C45DF3265B2AFF00EBCB57 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		A2290C66B4EFE1B3AE55360A /* Pods-MercadoLibreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MercadoLibreTests.release.xcconfig"; path = "Target Support Files/Pods-MercadoLibreTests/Pods-MercadoLibreTests.release.xcconfig"; sourceTree = "<group>"; };
 		A241ED28A275E7CD9A234D5E /* Pods_MercadoLibreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MercadoLibreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D9FD130753E92B3A6CA36D /* Pods_MercadoLibre_MercadoLibreUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MercadoLibre_MercadoLibreUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -269,6 +271,7 @@
 				846F2413265A883900A2CACA /* Search */,
 				84043ADE2659F81400BC9E4D /* Category */,
 				8497109626593FC400026225 /* Home */,
+				84C45DF3265B2AFF00EBCB57 /* EmptyStateView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -688,6 +691,7 @@
 				84043AA82659CB1500BC9E4D /* BasePresenter.swift in Sources */,
 				84043AAC2659CB2A00BC9E4D /* Contract.swift in Sources */,
 				84043AE02659F82E00BC9E4D /* CategoryCoordinator.swift in Sources */,
+				84C45DF4265B2AFF00EBCB57 /* EmptyStateView.swift in Sources */,
 				849DBB70265A9DFF005D18E3 /* ProductDetailContract.swift in Sources */,
 				8454730E26597321003DDF17 /* BaseTableViewDataSource.swift in Sources */,
 				849DBB6C265A9DF3005D18E3 /* ProductDetailPresenter.swift in Sources */,

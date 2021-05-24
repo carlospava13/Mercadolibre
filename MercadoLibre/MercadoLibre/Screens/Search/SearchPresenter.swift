@@ -7,6 +7,7 @@
 
 import Combine
 import MLData
+import os
 
 final class SearchPresenter: BasePresenter {
     struct InputDependencies {
@@ -26,16 +27,18 @@ final class SearchPresenter: BasePresenter {
 
     override func viewDidLoad() {
         ownerView.setTitle(TextML.Product.title)
+        ownerView.setEmptyState(description: TextML.EmptyState.description)
     }
 
     private func getProduct(_ text: String) {
         ownerView.showTableViewWithAnimation()
-        dependencies.repository.getItems(item: text).sink { completion in
+        ownerView.showLoading()
+        dependencies.repository.getItems(item: text).sink { [weak self] completion in
             switch completion {
             case .failure(let error):
-                print(error)
+                os_log("Some ERROR: \(error.localizedDescription)")
             case .finished:
-                print("finished")
+                self?.ownerView.hideLoading()
             }
         } receiveValue: { [weak self] result in
             self?.parse(items: result.results)
