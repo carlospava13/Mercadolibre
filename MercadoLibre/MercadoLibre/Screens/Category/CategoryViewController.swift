@@ -8,6 +8,7 @@
 import UIKit
 
 final class CategoryViewController: BaseViewController {
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -15,6 +16,7 @@ final class CategoryViewController: BaseViewController {
         tableView.indicatorStyle = .white
         tableView.register(cell: ProductCell.self)
         tableView.separatorStyle = .none
+        tableView.backgroundView = spinner
         return tableView
     }()
 
@@ -59,7 +61,7 @@ final class CategoryViewController: BaseViewController {
     }
 }
 
-extension CategoryViewController: CategoryView {
+extension CategoryViewController: CategoryView {    
     func setTilte(_ text: String) {
         title = text
     }

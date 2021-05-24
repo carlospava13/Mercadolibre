@@ -15,3 +15,6 @@
 
 //MARK: Product Detail
 "productDetailViewer.description" = "Descripción";
+
+//MARK: Empty Empty
+"emptyStateView.description" = "Aquí puedes encontrar tus productos";

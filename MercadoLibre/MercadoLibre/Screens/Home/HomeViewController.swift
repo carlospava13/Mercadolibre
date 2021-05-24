@@ -23,13 +23,15 @@ final class HomeViewController: BaseViewController {
         tableView.register(cell: CategotyCell.self)
         tableView.layer.masksToBounds = true
         tableView.separatorStyle = .none
+        tableView.backgroundColor = .clear
+        tableView.backgroundView = spinner
         return tableView
     }()
 
     private lazy var categoryDataSource: CategoryDataSource = {
         CategoryDataSource(cellIdentifier: CategotyCell.self)
     }()
-
+    
     private var ownerPresenter: HomePresentering! {
         presenter as? HomePresentering
     }

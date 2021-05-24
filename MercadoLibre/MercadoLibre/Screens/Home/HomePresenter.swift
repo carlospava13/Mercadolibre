@@ -7,6 +7,7 @@
 
 import Combine
 import MLData
+import os
 
 final class HomePresenter: BasePresenter {
     
@@ -30,13 +31,14 @@ final class HomePresenter: BasePresenter {
     }
 
     func getCategories() {
+        ownerView.showLoading()
         let repository = GetCategoriesRepository()
-        repository.getCategories().sink { completion in
+        repository.getCategories().sink { [weak self] completion in
             switch completion {
             case .failure(let error):
-                print(error)
+                os_log("Some ERROR: \(error.localizedDescription)")
             case .finished:
-               print("finished")
+                self?.ownerView.hideLoading()
             }
         } receiveValue: { [weak self] categories in
             self?.parse(categories: categories)

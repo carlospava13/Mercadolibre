@@ -6,6 +6,7 @@
 //
 
 import MLData
+import os
 
 final class CategoryPresenter: BasePresenter {
     struct InputDependencies {
@@ -29,8 +30,14 @@ final class CategoryPresenter: BasePresenter {
     }
 
     private func getProducts() {
-        dependencies.repository.getProducts(categoryId: dependencies.category.id).sink { _ in
-
+        ownerView.showLoading()
+        dependencies.repository.getProducts(categoryId: dependencies.category.id).sink { [weak self] completion in
+            switch completion {
+            case .failure(let error):
+                os_log("Some ERROR: \(error.localizedDescription)")
+            case .finished:
+                self?.ownerView.hideLoading()
+            }
         } receiveValue: { [weak self] apiProducts in
             self?.parse(items: apiProducts.results)
         }.store(in: &subscriptions)

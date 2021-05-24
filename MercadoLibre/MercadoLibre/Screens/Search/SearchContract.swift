@@ -13,6 +13,7 @@ protocol SearchPresentering: BasePresentering, ProductDataSourceDelegate {
 }
 
 protocol SearchView: BaseView {
+    func setEmptyState(description: String)
     func setTitle(_ text: String)
     func showTableViewWithAnimation()
     func setupProduct(data: [ProductModel])
