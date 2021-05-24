@@ -10,6 +10,8 @@ import Foundation
 
 enum JsonFile: String {
     case category
+    case productByCategory
+    case products
 }
 
 @testable import MLData
