@@ -12,6 +12,8 @@ enum JsonFile: String {
     case category
     case productByCategory
     case products
+    case productdetail
+    case productDescription
 }
 
 @testable import MLData

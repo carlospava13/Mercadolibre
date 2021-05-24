@@ -28,7 +28,7 @@ final class GetCategoryRepositoryTest: XCTestCase {
         super.tearDown()
     }
 
-    func testGetCategory_WhenResponseSuccess_ThenGetCategories() {
+    func testGetCategory_WhenResponseSuccess_ThenGetCategoryList() {
         // Given
         let expectation = self.expectation(description: "test get categories")
         var valueExpected: [APICategoryModel]?

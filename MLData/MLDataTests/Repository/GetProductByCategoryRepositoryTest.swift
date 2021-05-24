@@ -28,7 +28,7 @@ final class GetProductByCategoryRepositoryTest: XCTestCase {
         super.tearDown()
     }
 
-    func testGetProducstByCategory_WhenResponseSuccess_ThenGetCategories() {
+    func testGetProducstByCategory_WhenResponseSuccess_ThenGetProductList() {
         // Given
         let expectation = self.expectation(description: "test get categories")
         var valueExpected: APIProductResultModel?

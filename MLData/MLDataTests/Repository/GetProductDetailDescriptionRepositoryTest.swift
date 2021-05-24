@@ -1,5 +1,5 @@
 //
-//  GetProductRepositoryTest.swift
+//  GetProductDetailDescriptionRepositoryTest.swift
 //  MLDataTests
 //
 //  Created by Carlos Pava on 24/05/21.
@@ -8,16 +8,16 @@
 import Combine
 @testable import MLData
 import XCTest
-final class GetProductRepositoryTest: XCTestCase {
+final class GetProductDetailDescriptionRepositoryTest: XCTestCase {
     var urlSessionMock: URLSessionMock!
-    var sut: GetProductsRepositoring!
+    var sut: GetProductDetailDescriptionRepositoring!
     var subscriptions: Set<AnyCancellable>?
 
     override func setUp() {
         super.setUp()
         urlSessionMock = URLSessionMock()
         let apiClient = APIClient(session: urlSessionMock)
-        sut = GetProductsRepository(endPointBuilder: EndPointBuilder(), apiClient: apiClient)
+        sut = GetProductDetailDescriptionRepository(endPointBuilder: EndPointBuilder(), apiClient: apiClient)
         subscriptions = Set<AnyCancellable>()
     }
 
@@ -28,14 +28,14 @@ final class GetProductRepositoryTest: XCTestCase {
         super.tearDown()
     }
 
-    func testGetProducts_WhenResponseSuccess_ThenGetProductlist() {
+    func testGetProductDetailDescription_WhenResponseSuccess_ThenGetDescriptionList() {
         // Given
         let expectation = self.expectation(description: "test get categories")
-        var valueExpected: APIProductResultModel?
-        urlSessionMock.jsonFile = .productByCategory
+        var valueExpected: [APIProductDetailDescriptionModel]?
+        urlSessionMock.jsonFile = .productDescription
         // When
         
-        sut.getItems(item: "KTM").sink { completion in
+        sut.getproduct(id: "MCO23").sink { completion in
             switch completion {
             case .failure(let error):
                 XCTFail(error.localizedDescription)
@@ -49,15 +49,16 @@ final class GetProductRepositoryTest: XCTestCase {
         // Then
         wait(for: [expectation], timeout: 1.0)
         XCTAssertNotNil(valueExpected)
+        XCTAssertGreaterThan(valueExpected!.count, 0)
     }
 
-    func testGetProducts_WhenResponseFailure_ThenGetError() {
+    func testGetProductDetailDescription_WhenResponseFailure_ThenGetError() {
         // Given
         let expectation = self.expectation(description: "test get categories")
         var valueExpected: HTTPStatusCode?
         urlSessionMock.response = .failure(404)
         // When
-        sut.getItems(item: "KTM").sink { completion in
+        sut.getproduct(id: "MCO23").sink { completion in
             switch completion {
             case .failure(let error):
                 valueExpected = HTTPStatusCode(rawValue: error._code)
@@ -74,4 +75,6 @@ final class GetProductRepositoryTest: XCTestCase {
         XCTAssertEqual(valueExpected, .notFound)
     }
 }
+
+
 
