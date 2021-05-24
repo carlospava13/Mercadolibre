@@ -9,14 +9,17 @@ import Foundation
 import Combine
 
 public final class APIClient: APIClienting {
-    public init() {}
+    private let session: APIProvider
+    public init(session: APIProvider = URLSession.shared) {
+        self.session = session
+    }
     public func execute<T>(_ endPoint: EndPointBuilderAble) -> AnyPublisher<T, Error> where T : Decodable, T : Encodable {
         
         guard let url = URL(string:endPoint.stringURL) else {
             return Result.Publisher(HTTPStatusCode.notFound).eraseToAnyPublisher()
         }
         
-        return URLSession.shared.dataTaskPublisher(for: URLRequest(url: url))
+        return session.apiResponse(for: URLRequest(url: url))
             .tryMap {
                 guard let response = $0.response as? HTTPURLResponse else {
                     throw HTTPStatusCode.badRequest
