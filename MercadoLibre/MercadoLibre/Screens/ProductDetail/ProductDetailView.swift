@@ -164,7 +164,7 @@ final class ProductDetailViewer: UIView {
         collectionView.dataSource = dataSource
     }
     
-    func set(detail: APIProductDetailModel) {
+    func set(detail: ProductDetailModel) {
         productTitleLabel.text = detail.title
         priceLabel.text = detail.price.setCurrentMoneyFormatter()
         dataSource.set(data: detail.pictures)

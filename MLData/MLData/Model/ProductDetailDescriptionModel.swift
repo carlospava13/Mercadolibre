@@ -12,4 +12,7 @@ public struct APIProductDetailDescriptionModel: Codable {
     enum CodingKeys: String, CodingKey {
         case plainText = "plain_text"
     }
+    public init(plainText: String) {
+        self.plainText = plainText
+    }
 }

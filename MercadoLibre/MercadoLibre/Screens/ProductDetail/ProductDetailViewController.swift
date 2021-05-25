@@ -16,7 +16,7 @@ final class ProductDetailViewController: BaseViewController {
 }
 
 extension ProductDetailViewController: ProductDetailView {
-    func set(detail: APIProductDetailModel) {
+    func set(detail: ProductDetailModel) {
         productDetailViewer.set(detail: detail)
     }
     

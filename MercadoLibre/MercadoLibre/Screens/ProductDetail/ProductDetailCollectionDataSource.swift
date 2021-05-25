@@ -10,9 +10,9 @@ import MLData
 
 final class ProductDetailCollectionDataSource: NSObject, UICollectionViewDataSource {
     
-    private var data: [APIProductDetailPicture] = []
+    private var data: [String] = []
     
-    func set(data: [APIProductDetailPicture]) {
+    func set(data: [String]) {
         self.data = data
     }
     
@@ -24,7 +24,7 @@ final class ProductDetailCollectionDataSource: NSObject, UICollectionViewDataSou
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductDetailCollectionViewCell", for: indexPath) as? ProductDetailCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.url = data[indexPath.row].secure_url
+        cell.url = data[indexPath.row]
         return cell
     }
 }
