@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  MercadoLibre
+
+  Created by Carlos Pava on 22/05/21.
+  
+*/
+//MARK: Search bar
+"searchBar.placeholder" = "Buscar productos, marcas y mas";
+
+//MARK: Categories
+
+"homeView.categoryTitle" = "Categorias";
+"homeView.itemTitle" = "Productos";
+
+//MARK: Product Detail
+"productDetailViewer.description" = "Descripción";
+
+//MARK: Empty Empty
+"emptyStateView.description" = "Aquí puedes encontrar tus productos";
