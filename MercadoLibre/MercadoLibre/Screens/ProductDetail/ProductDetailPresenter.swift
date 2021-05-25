@@ -64,7 +64,12 @@ final class ProductDetailPresenter: BasePresenter {
     }
 
     private func parse(detail: APIProductDetailModel) {
-        ownerView.set(detail: detail)
+        ownerView.set(detail: ProductDetailModel(
+            title: detail.title,
+            price: detail.price,
+            pictures: detail.pictures.map { (picture) -> String in
+                picture.secureUrl
+            }))
     }
 }
 

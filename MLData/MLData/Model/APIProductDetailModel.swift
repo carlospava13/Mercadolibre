@@ -11,13 +11,23 @@ public struct APIProductDetailModel: Codable {
     public let title: String
     public let price: Int
     public let pictures: [APIProductDetailPicture]
-    public let descriptions: [APIProductDeatilDescription]
+   
+    public init(title: String,
+                price: Int,
+                pictures: [APIProductDetailPicture]) {
+        self.title = title
+        self.price = price
+        self.pictures = pictures
+    }
 }
 
 public struct APIProductDetailPicture: Codable {
-    public let secure_url: String
-}
-
-public struct APIProductDeatilDescription: Codable {
-    public let id: String
+    public let secureUrl: String
+    enum CodingKeys: String, CodingKey {
+        case secureUrl = "secure_url"
+    }
+    
+    public init(secureUrl: String) {
+        self.secureUrl = secureUrl
+    }
 }
