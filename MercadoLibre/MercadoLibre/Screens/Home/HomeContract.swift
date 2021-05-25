@@ -14,5 +14,5 @@ protocol HomePresentering: BasePresentering, CategoryDataSourceDelegate {
 
 protocol HomeView: BaseView {
     func setTitle(_ text: String)
-    func setupCategory(data: [CategoryModel])
+    func setCategories(categories: [CategoryModel])
 }

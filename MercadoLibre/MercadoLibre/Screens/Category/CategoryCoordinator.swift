@@ -30,8 +30,6 @@ final class CategoryCoordinator: AppCoordinator {
         navigationController.pushViewController(viewController, animated: true)
         categoryViewController = viewController
     }
-    
-  
 }
 
 extension CategoryCoordinator: CategoryCoordinatorDelegate {
