@@ -1,8 +1,7 @@
 ### MercadoLibre Test
 
 ------------
-
-this is application about show categories and products. the intention from application is selection process to mercadolibre company. this application was created in **Swift** and also the interfaces was created with **UIKit** framework.
+> this is application about show categories and products. the intention is selection process to mercadolibre company. this application was created in **Swift** and also the interfaces was created with **UIKit** framework.
 
 ### Features
 
