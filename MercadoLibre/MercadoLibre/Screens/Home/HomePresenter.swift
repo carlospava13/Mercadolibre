@@ -13,6 +13,7 @@ final class HomePresenter: BasePresenter {
     
     struct InputDependencies {
         weak var coordinator: HomeCoordinatorDelegate?
+        let repository:GetCategoryRepositoring
     }
     
     private var dependencies: InputDependencies
@@ -32,8 +33,7 @@ final class HomePresenter: BasePresenter {
 
     func getCategories() {
         ownerView.showLoading()
-        let repository = GetCategoriesRepository()
-        repository.getCategories().sink { [weak self] completion in
+        dependencies.repository.getCategories().sink { [weak self] completion in
             switch completion {
             case .failure(let error):
                 os_log("Some ERROR: \(error.localizedDescription)")
@@ -51,7 +51,7 @@ final class HomePresenter: BasePresenter {
             data.append(CategoryModel(id: categoryDto.id,
                                       title: categoryDto.name))
         }
-        ownerView.setupCategory(data: data)
+        ownerView.setCategories(categories: data)
     }
 }
 

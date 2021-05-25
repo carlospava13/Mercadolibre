@@ -6,16 +6,17 @@
 //
 
 import UIKit
-
+import MLData
 protocol HomeCoordinatorDelegate: AnyObject {
     func showCategory(category: CategoryModel)
     func showSearch()
 }
 
 final class HomeCoordinator: AppCoordinator {
-
     override func start() {
-        let dependencies = HomePresenter.InputDependencies(coordinator: self)
+        let dependencies = HomePresenter.InputDependencies(
+            coordinator: self,
+            repository: GetCategoriesRepository())
         let homePresenter = HomePresenter(dependencies: dependencies)
         let homeViewController = HomeViewController()
         homeViewController.presenter = homePresenter
@@ -23,20 +24,22 @@ final class HomeCoordinator: AppCoordinator {
     }
 
     private func categoryCoordinator(category: CategoryModel) {
-        let categoryCoordinator = CategoryCoordinator(parentCoordinator: self,
-                                                      navigationController: navigationController)
+        let categoryCoordinator = CategoryCoordinator(
+            parentCoordinator: self,
+            navigationController: navigationController)
         categoryCoordinator.start(category: category)
     }
 }
 
-extension HomeCoordinator: HomeCoordinatorDelegate {    
+extension HomeCoordinator: HomeCoordinatorDelegate {
     func showCategory(category: CategoryModel) {
         categoryCoordinator(category: category)
     }
-    
+
     func showSearch() {
-        let searchCoordinator = SearchCoordinator(parentCoordinator: self,
-                                                  navigationController: navigationController)
+        let searchCoordinator = SearchCoordinator(
+            parentCoordinator: self,
+            navigationController: navigationController)
         searchCoordinator.start()
     }
 }

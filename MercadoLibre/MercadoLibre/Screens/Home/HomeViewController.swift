@@ -31,7 +31,7 @@ final class HomeViewController: BaseViewController {
     private lazy var categoryDataSource: CategoryDataSource = {
         CategoryDataSource(cellIdentifier: CategotyCell.self)
     }()
-    
+
     private var ownerPresenter: HomePresentering! {
         presenter as? HomePresentering
     }
@@ -42,7 +42,7 @@ final class HomeViewController: BaseViewController {
         setupViews()
         setupTableView()
     }
-    
+
     private func setupRightBarButton() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(search))
     }
@@ -79,7 +79,7 @@ final class HomeViewController: BaseViewController {
         categoryDataSource.delegate = ownerPresenter
         tableView.layer.cornerRadius = 10
     }
-    
+
     @objc func search() {
         ownerPresenter.showSearch()
     }
@@ -90,8 +90,8 @@ extension HomeViewController: HomeView {
         title = text
     }
 
-    func setupCategory(data: [CategoryModel]) {
-        categoryDataSource.set(data: data)
+    func setCategories(categories: [CategoryModel]) {
+        categoryDataSource.set(data: categories)
         tableView.reloadData()
     }
 }
