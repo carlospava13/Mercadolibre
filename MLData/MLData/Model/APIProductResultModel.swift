@@ -9,6 +9,9 @@ import Foundation
 
 public struct APIProductResultModel: Codable {
     public let results: [APIProductModel]
+    public init (results: [APIProductModel]) {
+        self.results = results
+    }
 }
 
 public struct APIProductModel: Codable {
@@ -27,5 +30,21 @@ public struct APIProductModel: Codable {
         case permalink = "permalink"
         case thumbnail = "thumbnail"
         case condition = "condition"
+    }
+    
+    public init(id: String,
+                title: String,
+                price: Int,
+                availableQuantity: Int,
+                permalink: String,
+                thumbnail: String,
+                condition: String) {
+        self.id = id
+        self.title = title
+        self.price = price
+        self.availableQuantity = availableQuantity
+        self.permalink = permalink
+        self.thumbnail = thumbnail
+        self.condition = condition
     }
 }
