@@ -27,9 +27,9 @@ final class ProductDetailPresenter: BasePresenter {
     }
 
     override func viewDidLoad() {
+        ownerView.set(titleDescription: TextML.ProducDetail.descriptionTitle)
         getProduct()
         getProductDescription()
-        ownerView.set(titleDescription: TextML.ProducDetail.descriptionTitle)
     }
 
     private func getProduct() {
@@ -57,6 +57,7 @@ final class ProductDetailPresenter: BasePresenter {
             }
         } receiveValue: { [weak self] description in
             guard let text = description.first?.plainText else {
+                os_log("There aren`t descriptions")
                 return
             }
             self?.ownerView.set(description: text)
