@@ -1,10 +1,21 @@
 pipeline {
-  agent any
-  steges {
-    stage('Build') {
-      steps {
-        sh 'pod install'
-      }
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
     }
-  }
 }
