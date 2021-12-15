@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Dependencies ') {
             steps {
-              bundle exec pod install
+              sh '/usr/local/bin/pod install'
             }
         }
     }
