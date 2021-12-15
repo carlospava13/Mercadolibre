@@ -9,7 +9,8 @@ pipeline {
         }
         stage('Dependencies ') {
             steps {
-             sh 'sudo pod install'
+             	sh 'sudo pod install'
+		sh 'cpava'
             }
         }
     }
