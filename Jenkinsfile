@@ -11,6 +11,7 @@ pipeline {
             steps {
 		sleep 10
              	sh 'cd MercadoLibre iOS'
+		sh 'ls'
 		sleep 10
 		sh 'pod install'
             }
