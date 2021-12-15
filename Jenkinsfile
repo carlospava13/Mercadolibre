@@ -13,9 +13,11 @@ pipeline {
 		sleep 1
 		sh 'cd MercadoLibre/'
 		sh 'ls'
-		sleep 1
-		sh 'sudo -u carlospava pod install'
             }
+	    script {
+    		#!/bin/bash -l
+		pod install
+		}
         }
     }
 }
