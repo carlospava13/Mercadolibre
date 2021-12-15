@@ -10,10 +10,12 @@ pipeline {
         }
         stage('Dependencies ') {
             steps {
-		sleep 10
+		sleep 11
              	sh 'cd MercadoLibre iOS'
 		sh 'ls'
-		sleep 10
+		sleep 1
+		sh 'cd MercadoLibre'
+		sleep 1
 		sh 'pod install'
             }
         }
