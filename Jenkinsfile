@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Dependencies ') {
             steps {
-              sh '/usr/local/bin/pod install'
+             sh 'sudo pod install'
             }
         }
     }
