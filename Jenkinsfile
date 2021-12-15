@@ -9,8 +9,8 @@ pipeline {
         }
         stage('Dependencies ') {
             steps {
-             	sh 'sudo pod install'
-		sh 'cpava'
+             	sh 'cd MercadoLibre iOS'
+		sh 'pod install'
             }
         }
     }
