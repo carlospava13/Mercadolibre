@@ -13,6 +13,7 @@ pipeline {
 		sleep 1
 		sh 'cd MercadoLibre/'
 		sh 'ls'
+		sh 'pod install'
             }
         }
     }
