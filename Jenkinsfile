@@ -9,12 +9,11 @@ pipeline {
         }
         stage('Dependencies') {
             steps {
+          	sh 'ls'
 		sleep 1
-             	sh 'cd MercadoLibre iOS/'
+		sh 'cd MercadoLibre/'
 		sleep 1
-		sh 'ls'
-		sleep 1
-		sh 'bundle exec pod install'
+		sh 'pod install --verbose'
             }
         }
     }
