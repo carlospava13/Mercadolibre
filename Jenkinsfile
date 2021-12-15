@@ -14,11 +14,7 @@ pipeline {
 		sh 'cd MercadoLibre/'
 		sh 'ls'
 		sleep 1
-		sh 'chmod +x .git/hooks/post-checkout'
-		sh '''#!/bin/sh
-			if [ -r Podfile ] ; then
-  			pod install
-			fi'''
+		sh 'sudo -u cpava pod install'
             }
         }
     }
