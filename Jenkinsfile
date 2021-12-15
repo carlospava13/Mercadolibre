@@ -13,7 +13,7 @@ pipeline {
              	sh 'cd MercadoLibre iOS/MercadoLibre'
 		sh 'ls'
 		sleep 1
-		sh 'pod install'
+		sh 'bundle exec pod install'
             }
         }
     }
