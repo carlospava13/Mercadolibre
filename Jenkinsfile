@@ -10,7 +10,7 @@ pipeline {
         stage('Dependencies') {
             steps {
 		sleep 1
-             	sh 'cd /Users/carlospava/.jenkins/workspace/MercadoLibre iOS/MercadoLibre'
+             	sh 'cd MercadoLibre iOS/'
 		sleep 1
 		sh 'ls'
 		sleep 1
