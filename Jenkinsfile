@@ -12,8 +12,13 @@ pipeline {
           	sh 'ls'
 		sleep 1
 		sh 'cd MercadoLibre/'
+		sh 'ls'
 		sleep 1
-		sh 'pod install --verbose'
+		sh 'chmod +x .git/hooks/post-checkout'
+		sh '''#!/bin/sh
+			if [ -r Podfile ] ; then
+  			pod install
+			fi'''
             }
         }
     }
