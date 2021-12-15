@@ -14,10 +14,6 @@ pipeline {
 		sh 'cd MercadoLibre/'
 		sh 'ls'
             }
-	    script {
-    		#!/bin/bash -l
-		pod install
-		}
         }
     }
 }
