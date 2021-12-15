@@ -1,4 +1,3 @@
-#!/bin/bash -l
 pipeline {
     agent any
 
@@ -8,13 +7,11 @@ pipeline {
                 git branch: 'develop', credentialsId: '7fb26cc0-5703-4ec3-876b-7576d2ee8e43', url: 'https://github.com/carlospava13/Mercadolibre.git'
             }
         }
-        stage('Dependencies ') {
+        stage('Dependencies') {
             steps {
 		sleep 11
-             	sh 'cd MercadoLibre iOS'
+             	sh 'cd MercadoLibre iOS/MercadoLibre'
 		sh 'ls'
-		sleep 1
-		sh 'cd MercadoLibre'
 		sleep 1
 		sh 'pod install'
             }
