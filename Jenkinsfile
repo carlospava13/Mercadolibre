@@ -9,8 +9,9 @@ pipeline {
         }
         stage('Dependencies') {
             steps {
-		sleep 11
-             	sh 'cd MercadoLibre'
+		sleep 1
+             	sh 'cd /Users/carlospava/.jenkins/workspace/MercadoLibre iOS/MercadoLibre'
+		sleep 1
 		sh 'ls'
 		sleep 1
 		sh 'bundle exec pod install'
