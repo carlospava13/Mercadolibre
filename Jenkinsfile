@@ -7,14 +7,9 @@ pipeline {
                 git branch: 'develop', credentialsId: '7fb26cc0-5703-4ec3-876b-7576d2ee8e43', url: 'https://github.com/carlospava13/Mercadolibre.git'
             }
         }
-        stage('Test') {
+        stage('Dependencies ') {
             steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                sh 'pod install'
             }
         }
     }
