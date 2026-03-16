@@ -10,7 +10,8 @@ import UIKit
 
 final class CategotyCell: BaseTableViewCell<CategoryModel> {
     private lazy var itemTitleLabel = ItemTitleLabel()
-
+    private var imageCode: UIImage?
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setItemTitleLabelConstraints()
