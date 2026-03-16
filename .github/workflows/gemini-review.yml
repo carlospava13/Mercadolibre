@@ -1,11 +1,9 @@
 name: "Gemini Code Review"
 
-# Esto le dice a GitHub que corra la acción cada vez que abras o actualices un PR
 on:
   pull_request:
     types: [opened, synchronize, ready_for_review]
 
-# Permisos necesarios para que el bot pueda escribir comentarios
 permissions:
   contents: read
   pull-requests: write
@@ -17,12 +15,9 @@ jobs:
       - name: "Run AI Code Review"
         uses: petarzarkov/gemini-code-review-action@latest
         with:
-          # Usamos la versión Flash para evitar el error 429 (Resource Exhausted)
-          model: 'gemini-1.5-flash'
-          # Excluimos archivos de configuración para enfocar a la IA solo en el código
+          # Actualizado a la versión 2.5 Flash
+          model: 'gemini-2.5-flash'
           exclude: '*.md,*.json,Podfile.lock,*.pbxproj,*.xcworkspace/*'
         env:
-          # El GITHUB_TOKEN ya viene incluido gratis en GitHub
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # Tu llave de Google AI Studio
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
