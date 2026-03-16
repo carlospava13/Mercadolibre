@@ -8,6 +8,8 @@
 import Combine
 
 class BasePresenter: BasePresentering {
+
+    private var name: String?
     weak var view: BaseView?
     var subscriptions = Set<AnyCancellable>()
 
