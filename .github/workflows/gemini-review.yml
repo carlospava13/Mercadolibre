@@ -17,12 +17,12 @@ jobs:
       - name: "Run AI Code Review"
         uses: petarzarkov/gemini-code-review-action@latest
         with:
-          # Le indicamos que te hable en español
-          language: Spanish
-          # Excluimos archivos de configuración para no gastar tokens analizando cosas que no son código
+          # Usamos la versión Flash para evitar el error 429 (Resource Exhausted)
+          model: 'gemini-1.5-flash'
+          # Excluimos archivos de configuración para enfocar a la IA solo en el código
           exclude: '*.md,*.json,Podfile.lock,*.pbxproj,*.xcworkspace/*'
         env:
-          # El GITHUB_TOKEN ya viene incluido gratis en GitHub, no tienes que crearlo
+          # El GITHUB_TOKEN ya viene incluido gratis en GitHub
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # Esta es la llave que guardaste en el Paso 2
+          # Tu llave de Google AI Studio
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
