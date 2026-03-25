@@ -8,6 +8,9 @@
 import Foundation
 
 extension String {
+
+  private var label: String?
+  
   var localized: String {
     return NSLocalizedString(self, comment: "\(self)_comment")
   }
