@@ -8,6 +8,8 @@
 import Foundation
 
 public class BaseRepository {
+
+    let endpoint:EndpontIssue
     var endPointBuilder: EndPointBuilder
     var apiClient: APIClienting
     public init(endPointBuilder: EndPointBuilder = EndPointBuilder(),
