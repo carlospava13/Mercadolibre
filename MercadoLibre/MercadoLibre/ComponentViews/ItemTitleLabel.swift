@@ -8,6 +8,8 @@
 import UIKit
 
 final class ItemTitleLabel: UILabel {
+
+    var name: String?
     
     var sizeFont: CGFloat = 14 {
         willSet {
@@ -19,6 +21,7 @@ final class ItemTitleLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
+        name = "test for review"
     }
     
     required init?(coder: NSCoder) {

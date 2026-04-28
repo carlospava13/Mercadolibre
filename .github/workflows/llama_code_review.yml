@@ -1,0 +1,23 @@
+name: Llama Local Review (Short PRs)
+
+on: 
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  llama-review:
+    name: Code Review via Llama 3.1
+    # Condición: solo se ejecuta si las lineas modificadas, agregadas o eliminadas sin 400 o menos
+    if: (github.event.pull_request.additions && github.event.pull_request.deletions) <= 400
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout del codigo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Ejecutar PR-Agent con llama local
+        run: |
+          cd C:\Users\carlo\pr-agent
+          python -m pr_agent.cli --pr_url=${{ github.event.pull_request.html_url }} review
