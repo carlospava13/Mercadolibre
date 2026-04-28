@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   gemini-review:
-    if: (github.event.pull_request.additions && github.event.pull_request.deletions) > 400
+    if: (github.event.pull_request.additions + github.event.pull_request.deletions) > 400
     runs-on: ubuntu-latest
     steps:
       - name: "Run AI Code Review"
